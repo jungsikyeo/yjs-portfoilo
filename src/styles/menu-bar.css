@@ -1,0 +1,23 @@
+@import "codicon.css";
+
+ul {
+  font-size: 24px;
+}
+
+ul > li {
+  width: 100%;
+  height: 48px;
+}
+
+.codicon {
+  color: var(--menuBarPrimaryFontColor);
+}
+
+.codicon .codicon-menu {
+  font-size: 16px;
+  height: 35px;
+}
+
+.codicon .select {
+  color: var(--menuBarSecondFontColor)
+}
