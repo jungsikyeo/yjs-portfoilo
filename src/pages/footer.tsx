@@ -1,14 +1,14 @@
 import React from "react";
 import "../styles/theme.css";
 
-export const Footer = (props: any) => {
+export const Footer = () => {
   return (
     <div
       style={{
         top: "calc(100% - 22px)",
         height: "22px",
         background: "var(--footerBackground)",
-        zIndex: 100,
+        zIndex: 1,
       }}
     >
       <span className="absolute">footer</span>

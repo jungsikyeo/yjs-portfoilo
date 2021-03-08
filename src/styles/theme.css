@@ -13,10 +13,18 @@ html {
   --menuBarBackground: rgb(52, 56, 70);
   --menuBarPrimaryFontColor: rgb(98, 114, 164);
   --menuBarSecondFontColor: rgb(255, 255, 255);
+  --menuBarSelectBorderColor: rgb(255, 114, 164);
+  --menuBarSelectBackgroundColor: rgb(60, 61, 81);
+  --menuBarSettingLayerBackground: rgb(52, 55, 70);
+  --menuBarSettingLayerListBorderColor: rgb(106, 108, 117);
+  --menuBarSettingLayerSelectFontColor: rgb(248, 248, 242);
+  --menuBarSettingLayerSelectBackgroundcolor: rgb(68, 71, 90);
+  --menuBarLayerFontColor: rgb(255, 255, 255);
 
   --mainLeftBackground: rgb(33, 35, 44);
   --mainRightBackground: rgb(52, 56, 70);
-  --footerBackground: rgb(25, 27, 34);
+
+  --footerBackground: rgb(25, 26, 33);
 }
 
 html[data-theme="dark"] {
@@ -26,9 +34,17 @@ html[data-theme="dark"] {
   --menuBarBackground: rgb(51, 51, 51);
   --menuBarPrimaryFontColor: rgba(255, 255, 255, 0.4);
   --menuBarSecondFontColor: rgb(255, 255, 255);
+  --menuBarSelectBorderColor: rgb(255, 255, 255);
+  --menuBarSelectBackgroundColor: rgb(51, 51, 51);
+  --menuBarSettingLayerBackground: rgb(37, 37, 38);
+  --menuBarSettingLayerListBorderColor: rgb(106, 108, 117);
+  --menuBarSettingLayerSelectFontColor: rgb(236, 241, 244);
+  --menuBarSettingLayerSelectBackgroundcolor: rgb(9, 71, 113);
+  --menuBarLayerFontColor: rgb(178, 178, 178);
 
   --mainLeftBackground: rgb(37, 37, 38);
   --mainRightBackground: rgb(31, 31, 31);
+
   --footerBackground: rgb(1, 121, 203);
 }
 

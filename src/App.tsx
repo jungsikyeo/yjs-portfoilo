@@ -10,14 +10,21 @@ import { Footer } from "./pages/footer";
 
 function App() {
   let theme = localStorage.getItem("theme");
-  if (!theme) theme = "dark";
+  if (!theme) {
+    theme = "dark";
+    localStorage.setItem("theme", theme);
+  }
   document.documentElement.setAttribute("data-theme", theme);
 
-  document.documentElement.classList.add("theme-transition");
-  document.documentElement.setAttribute("data-theme", theme);
-  window.setTimeout(function () {
-    document.documentElement.classList.remove("theme-transition");
-  }, 1000);
+  const onThemeHandler = async (e: any) => {
+    const changeThemeId = e.currentTarget.id;
+    document.documentElement.classList.add("theme-transition");
+    document.documentElement.setAttribute("data-theme", changeThemeId);
+    await window.setTimeout(function () {
+      document.documentElement.classList.remove("theme-transition");
+      localStorage.setItem("theme", changeThemeId);
+    }, 1000);
+  };
 
   return (
     <div
@@ -38,13 +45,13 @@ function App() {
           }}
         >
           <div className="w-full h-full relative whitespace-nowrap">
-            <MenuBar theme={{ theme }} />
-            <MainLeft theme={{ theme }} />
-            <MainRight theme={{ theme }} />
+            <MenuBar theme={onThemeHandler} />
+            <MainLeft />
+            <MainRight />
           </div>
         </div>
       </div>
-      <Footer theme={{ theme }} />
+      <Footer />
     </div>
   );
 }

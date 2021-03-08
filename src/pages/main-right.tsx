@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/theme.css";
 
-export const MainRight = (props: any) => {
+export const MainRight = () => {
   return (
     <div
       className="h-full absolute whitespace-normal"
@@ -9,7 +9,7 @@ export const MainRight = (props: any) => {
         left: "348px",
         width: "calc(100% - 348px)",
         background: "var(--mainRightBackground)",
-        zIndex: -1,
+        zIndex: 100,
       }}
     >
       right

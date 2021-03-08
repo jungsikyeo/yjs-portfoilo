@@ -1,23 +1,67 @@
 @import "codicon.css";
 
-ul {
-  font-size: 24px;
-}
-
-ul > li {
-  width: 100%;
-  height: 48px;
+ul li {
+  cursor: pointer;
 }
 
 .codicon {
+  box-sizing: border-box;
+  font-size: 24px;
   color: var(--menuBarPrimaryFontColor);
 }
-
+.codicon li {
+  width: 100%;
+  height: 48px;
+}
+.codicon li:hover:before {
+  color: var(--menuBarSecondFontColor);
+}
 .codicon .codicon-menu {
   font-size: 16px;
   height: 35px;
 }
-
 .codicon .select {
-  color: var(--menuBarSecondFontColor)
+  color: var(--menuBarSecondFontColor);
+  background-color: var(--menuBarSelectBackgroundColor);
+  border-left: 2px solid;
+  border-color: var(--menuBarSelectBorderColor);
+}
+.codicon .select:before {
+  margin-left: -2px;
+}
+
+.setting-layer {
+  left: 24px;
+  bottom: 45px;
+  width: 270px;
+  height: 80px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--menuBarLayerFontColor);
+  background-color: var(--menuBarSettingLayerBackground);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+.setting-layer:focus {
+  outline: none;
+}
+.setting-layer .list-border {
+  width: 250px;
+  height: 1px;
+  border-top: 1px solid var(--menuBarSettingLayerListBorderColor);
+}
+.setting-layer li {
+  height: 30px;
+  margin: 3px 0 3px 0;
+  padding: 0 10px 0 10px;
+  display: flex;
+  align-items: center;
+}
+.setting-layer li:hover {
+  color: var(--menuBarSettingLayerSelectFontColor);
+  background-color: var(--menuBarSettingLayerSelectBackgroundcolor);
+}
+.setting-layer span {
+  padding-left: 20px;
 }
