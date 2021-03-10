@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/App.css";
 import "./styles/codicon.css";
 import "./styles/tailwind.css";
@@ -26,6 +26,9 @@ function App() {
     }, 1000);
   };
 
+  const [menuState, setMenuState] = useState([]);
+  const onChangeMenuHandler = (menu: any) => setMenuState(menu);
+
   return (
     <div
       className="w-full h-screen"
@@ -45,8 +48,8 @@ function App() {
           }}
         >
           <div className="w-full h-full relative whitespace-nowrap">
-            <MenuBar theme={onThemeHandler} />
-            <MainLeft />
+            <MenuBar theme={onThemeHandler} menu={onChangeMenuHandler} />
+            <MainLeft menu={menuState} />
             <MainRight />
           </div>
         </div>

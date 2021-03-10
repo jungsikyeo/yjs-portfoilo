@@ -3,7 +3,7 @@ import "../styles/theme.css";
 import "../styles/menu-bar.css";
 
 export const MenuBar = (props: any) => {
-  let menuList: { [index: string]: any } = {
+  const menuList: { [index: string]: any } = {
     menuGithub: false,
     menuFiles: false,
     menuSearch: false,
@@ -31,6 +31,7 @@ export const MenuBar = (props: any) => {
       await (newMenuState["menuSettings"] = true);
     }
     await setMenuState(newMenuState);
+    props.menu(newMenuState);
   };
 
   return (
