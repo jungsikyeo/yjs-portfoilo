@@ -1,0 +1,6 @@
+.main-left {
+  left: 48px;
+  width: 300px;
+  background-color: var(--mainLeftBackground);
+  z-index: 1;
+}

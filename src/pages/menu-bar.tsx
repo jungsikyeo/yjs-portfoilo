@@ -34,15 +34,7 @@ export const MenuBar = (props: any) => {
   };
 
   return (
-    <div
-      className="h-full absolute whitespace-normal"
-      style={{
-        left: "0px",
-        width: "48px",
-        background: "var(--menuBarBackground)",
-        zIndex: 100,
-      }}
-    >
+    <div className="menu-bar h-full absolute whitespace-normal">
       <div className="w-full h-full flex flex-col items-center justify-between">
         <ul className="w-full h-4/6 flex flex-col items-center justify-start codicon">
           <li
@@ -86,12 +78,12 @@ export const MenuBar = (props: any) => {
             }`}
           />
           <li
-              id="menuGithub"
-              title={`깃허브 목록`}
-              onClick={onMenuHandler}
-              className={`codicon-github flex items-center justify-center ${
-                  menuState.menuGithub ? `select` : ``
-              }`}
+            id="menuGithub"
+            title={`깃허브 목록`}
+            onClick={onMenuHandler}
+            className={`codicon-github flex items-center justify-center ${
+              menuState.menuGithub ? `select` : ``
+            }`}
           />
         </ul>
         <ul className="w-full h-2/6 flex flex-col items-center justify-end codicon">
