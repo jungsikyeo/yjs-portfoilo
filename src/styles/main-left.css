@@ -4,3 +4,52 @@
   background-color: var(--mainLeftBackground);
   z-index: 1;
 }
+
+.github-left {
+  width: 100%;
+  color: var(--mainLeftGithubFontColor);
+}
+.github-left .github-left-title {
+  height: 35px;
+}
+.github-left .github-left-title span {
+  color: var(--mainLeftGithubTitleFontColor);
+}
+.github-left .repository span {
+  color: var(--mainLeftRepositoryTitleFontColor);
+}
+.github-left .repository .codicon-chevron-right:before,
+.github-left .repository .codicon-chevron-down:before {
+  font-weight: normal;
+  font-size: 16px;
+}
+.github-left .border-select {
+  border: 1px solid var(--mainLeftRepositoryTitleBorderColor);
+}
+.github-left .border-no-select {
+  border: 1px solid var(--mainLeftBackground);
+}
+.github-left .repository-list .folder:before {
+  width: 22px;
+  height: 22px;
+  content: ' ';
+  background-size: 16px;
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-image: url("../images/folder.svg");
+  line-height: inherit!important;
+  display: inline-block;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.github-left .repository-list ul li {
+  color: var(--mainLeftGithubFontColor);
+  height: 22px;
+  font-size: 13px;
+}
+.github-left .repository-list .codicon-chevron-right:before,
+.github-left .repository-list .codicon-chevron-down:before {
+  font-weight: normal;
+  font-size: 16px;
+  padding-right: 4px;
+}

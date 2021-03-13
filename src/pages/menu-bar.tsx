@@ -1,39 +1,7 @@
-import React, { useState } from "react";
-import "../styles/theme.css";
+import React from "react";
 import "../styles/menu-bar.css";
 
 export const MenuBar = (props: any) => {
-  const menuList: { [index: string]: any } = {
-    menuGithub: false,
-    menuFiles: false,
-    menuSearch: false,
-    menuControl: false,
-    menuDebug: false,
-    menuExtensions: false,
-    menuAccount: true,
-    menuSettings: false,
-  };
-  const [menuState, setMenuState] = useState(menuList);
-  const [settingState, setSettingSate] = useState(false);
-
-  const onMenuHandler = async (e: any) => {
-    const newMenuState = { ...menuState };
-    const activeMenu = e.currentTarget.id;
-    if (activeMenu !== "menuSettings") {
-      for (let key in newMenuState) {
-        key === activeMenu
-          ? await (newMenuState[key] = true)
-          : await (newMenuState[key] = false);
-      }
-      setSettingSate(false);
-    } else {
-      setSettingSate(!settingState);
-      await (newMenuState["menuSettings"] = true);
-    }
-    await setMenuState(newMenuState);
-    props.menu(newMenuState);
-  };
-
   return (
     <div className="menu-bar h-full absolute whitespace-normal">
       <div className="w-full h-full flex flex-col items-center justify-between">
@@ -41,49 +9,49 @@ export const MenuBar = (props: any) => {
           <li
             id="menuFiles"
             title={`포트폴리오 목록`}
-            onClick={onMenuHandler}
+            onClick={props.onMenuHandler}
             className={`codicon-files flex items-center justify-center ${
-              menuState.menuFiles ? `select` : ``
+              props.menuState.menuFiles ? `select` : ``
             }`}
           />
           <li
             id="menuSearch"
             title={`보유기술 목록`}
-            onClick={onMenuHandler}
+            onClick={props.onMenuHandler}
             className={`codicon-search flex items-center justify-center ${
-              menuState.menuSearch ? `select` : ``
+              props.menuState.menuSearch ? `select` : ``
             }`}
           />
           <li
             id="menuControl"
             title={`타임라인`}
-            onClick={onMenuHandler}
+            onClick={props.onMenuHandler}
             className={`codicon-source-control flex items-center justify-center ${
-              menuState.menuControl ? `select` : ``
+              props.menuState.menuControl ? `select` : ``
             }`}
           />
           <li
             id="menuDebug"
             title={`공부중`}
-            onClick={onMenuHandler}
+            onClick={props.onMenuHandler}
             className={`codicon-debug-alt flex items-center justify-center ${
-              menuState.menuDebug ? `select` : ``
+              props.menuState.menuDebug ? `select` : ``
             }`}
           />
           <li
             id="menuExtensions"
             title={`향후 목표`}
-            onClick={onMenuHandler}
+            onClick={props.onMenuHandler}
             className={`codicon-extensions flex items-center justify-center ${
-              menuState.menuExtensions ? `select` : ``
+              props.menuState.menuExtensions ? `select` : ``
             }`}
           />
           <li
             id="menuGithub"
             title={`깃허브 목록`}
-            onClick={onMenuHandler}
+            onClick={props.onMenuHandler}
             className={`codicon-github flex items-center justify-center ${
-              menuState.menuGithub ? `select` : ``
+              props.menuState.menuGithub ? `select` : ``
             }`}
           />
         </ul>
@@ -91,27 +59,31 @@ export const MenuBar = (props: any) => {
           <li
             id="menuAccount"
             title={`프로필`}
-            onClick={onMenuHandler}
+            onClick={props.onMenuHandler}
             className={`codicon-account flex items-center justify-center ${
-              menuState.menuAccount ? `select` : ``
+              props.menuState.menuAccount ? `select` : ``
             }`}
           />
           <li
             id="menuSettings"
             title={`테마 설정`}
-            onClick={onMenuHandler}
+            onClick={props.onMenuHandler}
             className="codicon-settings-gear flex items-center justify-center"
           >
             <div
               className={`absolute setting-layer shadow-md 
-              ${menuState.menuSettings && settingState ? `block` : `hidden`}`}
+              ${
+                props.menuState.menuSettings && props.settingState
+                  ? `block`
+                  : `hidden`
+              }`}
             >
               <ul className="flex flex-col items-start">
-                <li id="dracula" onClick={props.theme}>
+                <li id="dracula" onClick={props.onThemeHandler}>
                   <span>Color Theme : Dracula</span>
                 </li>
                 <li className="list-border self-center" />
-                <li id="dark" onClick={props.theme}>
+                <li id="dark" onClick={props.onThemeHandler}>
                   <span>Color Theme : Dark (Visual Studio)</span>
                 </li>
               </ul>
