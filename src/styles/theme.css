@@ -22,6 +22,8 @@ html {
   --menuBarLayerFontColor: rgb(255, 255, 255);
 
   --mainLeftBackground: rgb(33, 35, 44);
+  --mainLeftComponentBorderColor: rgb(25, 26, 33);
+  --mainLeftComponentBackground: rgb(40, 42, 54);
   --mainLeftGithubFontColor: rgb(248, 248, 242);
   --mainLeftGithubTitleFontColor: rgb(248, 248, 242);
   --mainLeftRepositoryTitleFontColor: rgb(248, 248, 242);
@@ -47,7 +49,9 @@ html[data-theme="dark"] {
   --menuBarSettingLayerSelectBackgroundcolor: rgb(9, 71, 113);
   --menuBarLayerFontColor: rgb(178, 178, 178);
 
-  --mainLeftBackground: rgb(37, 37, 38);
+  --mainLeftBackground: rgb(33, 35, 44);
+  --mainLeftComponentBorderColor: rgb(25, 26, 33);
+  --mainLeftComponentBackground: rgba(0, 0, 0, 0);
   --mainLeftGithubFontColor: rgb(204, 204, 204);
   --mainLeftGithubTitleFontColor: rgb(187, 187, 187);
   --mainLeftRepositoryTitleFontColor: rgb(204, 204, 204);

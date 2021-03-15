@@ -7,40 +7,35 @@ export const MenuBar = (props: any) => {
       <div className="w-full h-full flex flex-col items-center justify-between">
         <ul className="w-full h-4/6 flex flex-col items-center justify-start codicon">
           <li
-            id="menuFiles"
-            title={`포트폴리오 목록`}
+            id="menuRecentProjects"
             onClick={props.onMenuHandler}
             className={`codicon-files flex items-center justify-center ${
-              props.menuState.menuFiles ? `select` : ``
+              props.menuState.menuRecentProjects ? `select` : ``
             }`}
           />
           <li
-            id="menuSearch"
-            title={`보유기술 목록`}
+            id="menuTechSkills"
             onClick={props.onMenuHandler}
             className={`codicon-search flex items-center justify-center ${
-              props.menuState.menuSearch ? `select` : ``
+              props.menuState.menuTechSkills ? `select` : ``
             }`}
           />
           <li
-            id="menuControl"
-            title={`타임라인`}
+            id="menuTimeline"
             onClick={props.onMenuHandler}
             className={`codicon-source-control flex items-center justify-center ${
-              props.menuState.menuControl ? `select` : ``
+              props.menuState.menuTimeline ? `select` : ``
             }`}
           />
           <li
-            id="menuDebug"
-            title={`공부중`}
+            id="menuLicense"
             onClick={props.onMenuHandler}
             className={`codicon-debug-alt flex items-center justify-center ${
-              props.menuState.menuDebug ? `select` : ``
+              props.menuState.menuLicense ? `select` : ``
             }`}
           />
           <li
             id="menuExtensions"
-            title={`향후 목표`}
             onClick={props.onMenuHandler}
             className={`codicon-extensions flex items-center justify-center ${
               props.menuState.menuExtensions ? `select` : ``
@@ -48,7 +43,6 @@ export const MenuBar = (props: any) => {
           />
           <li
             id="menuGithub"
-            title={`깃허브 목록`}
             onClick={props.onMenuHandler}
             className={`codicon-github flex items-center justify-center ${
               props.menuState.menuGithub ? `select` : ``
@@ -57,16 +51,14 @@ export const MenuBar = (props: any) => {
         </ul>
         <ul className="w-full h-2/6 flex flex-col items-center justify-end codicon">
           <li
-            id="menuAccount"
-            title={`프로필`}
+            id="menuAboutMe"
             onClick={props.onMenuHandler}
             className={`codicon-account flex items-center justify-center ${
-              props.menuState.menuAccount ? `select` : ``
+              props.menuState.menuAboutMe ? `select` : ``
             }`}
           />
           <li
             id="menuSettings"
-            title={`테마 설정`}
             onClick={props.onMenuHandler}
             className="codicon-settings-gear flex items-center justify-center"
           >

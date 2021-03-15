@@ -3,6 +3,7 @@ import "./styles/App.css";
 import "./styles/codicon.css";
 import "./styles/tailwind.css";
 import "./styles/theme.css";
+import "react-slidedown/lib/slidedown.css";
 import { MenuBar } from "./pages/menu-bar";
 import { MainLeft } from "./pages/main-left";
 import { MainRight } from "./pages/main-right";
@@ -16,13 +17,12 @@ function App() {
   }
   document.documentElement.setAttribute("data-theme", theme);
 
-
   const onThemeHandler = async (e: any) => {
     const changeThemeId = e.currentTarget.id;
     localStorage.setItem("theme", changeThemeId);
     await document.documentElement.classList.add("theme-transition");
     await document.documentElement.setAttribute("data-theme", changeThemeId);
-    await window.setTimeout(function () {
+    await window.setTimeout(() => {
       document.documentElement.classList.remove("theme-transition");
     }, 1500);
   };
@@ -43,15 +43,39 @@ function App() {
   }, []);
 
   const menuList: { [index: string]: any } = {
-    menuGithub: false,
-    menuFiles: false,
-    menuSearch: false,
-    menuControl: false,
-    menuDebug: false,
+    menuRecentProjects: false,
+    menuTechSkills: false,
+    menuTimeline: false,
+    menuLicense: false,
     menuExtensions: false,
-    menuAccount: true,
+    menuGithub: false,
+    menuAboutMe: true,
     menuSettings: false,
   };
+  const [menuState, setMenuState] = useState(menuList);
+  const [toggleState, setToggleSate] = useState(menuList);
+  const onMenuHandler = async (e: any) => {
+    const newMenuState = { ...menuState };
+    const activeMenu = e.target.id;
+    for (let key in newMenuState) {
+      key === activeMenu
+        ? await (newMenuState[key] = true)
+        : await (newMenuState[key] = false);
+    }
+    await setMenuState(newMenuState);
+    await onToggleHandler(e);
+  };
+  const onToggleHandler = async (e: any) => {
+    const newToggleState = { ...toggleState };
+    const activeMenu = e.target.id;
+    for (let key in newToggleState) {
+      key === activeMenu
+        ? await (newToggleState[key] = true)
+        : await (newToggleState[key] = false);
+    }
+    await setToggleSate(newToggleState);
+  };
+  /*
   const [menuState, setMenuState] = useState(menuList);
   const [settingState, setSettingSate] = useState(false);
   const onMenuHandler = async (e: any) => {
@@ -70,6 +94,7 @@ function App() {
     }
     await setMenuState(newMenuState);
   };
+  */
 
   return (
     <div
@@ -94,9 +119,16 @@ function App() {
               onThemeHandler={onThemeHandler}
               onMenuHandler={onMenuHandler}
               menuState={menuState}
-              settingState={settingState}
+              onToggleHandler={onToggleHandler}
+              toggleState={toggleState}
             />
-            <MainLeft menuState={menuState} repos={repos} />
+            <MainLeft
+              onMenuHandler={onMenuHandler}
+              menuState={menuState}
+              onToggleHandler={onToggleHandler}
+              toggleState={toggleState}
+              repos={repos}
+            />
             <MainRight />
           </div>
         </div>
