@@ -1,12 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { SlideDown } from "react-slidedown";
 
 export const GithubRepos = (props: any) => {
-  const [openState, setOpenState] = useState(false);
-  const onToggle = (e: any) => {
-    setOpenState(!openState);
-    props.onMenuHandler(e);
-  };
 
   return (
     <div
@@ -16,7 +11,7 @@ export const GithubRepos = (props: any) => {
     >
       <div
         id="menuGithub"
-        onClick={props.onToggleHandler}
+        onClick={props.onMenuHandler}
         className="component cursor-pointer codicon flex items-center"
       >
         <span

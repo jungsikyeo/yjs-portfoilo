@@ -65,7 +65,7 @@ export const MenuBar = (props: any) => {
             <div
               className={`absolute setting-layer shadow-md 
               ${
-                props.menuState.menuSettings && props.settingState
+                props.menuState.menuSettings && props.toggleState.menuSettings
                   ? `block`
                   : `hidden`
               }`}

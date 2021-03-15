@@ -1,13 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { SlideDown } from "react-slidedown";
 
 export const Timeline = (props: any) => {
-  const [openState, setOpenState] = useState(false);
-  const onToggle = (e: any) => {
-    setOpenState(!openState);
-    props.onMenuHandler(e);
-  };
-
   return (
     <div
       className={`${
@@ -16,19 +10,23 @@ export const Timeline = (props: any) => {
     >
       <div
         id="menuTimeline"
-        onClick={onToggle}
+        onClick={props.onMenuHandler}
         className="component cursor-pointer codicon flex items-center"
       >
         <span
           className={`text-xs font-black pl-2 flex items-center 
                 ${
-                  openState ? `codicon-chevron-down` : `codicon-chevron-right`
+                  props.menuState.menuTimeline && props.toggleState.menuTimeline
+                    ? `codicon-chevron-down`
+                    : `codicon-chevron-right`
                 }`}
         >
           TIMELINE
         </span>
         <SlideDown className="my-dropdown-slidedown">
-          {openState && <></>}
+          {props.menuState.menuTimeline && props.toggleState.menuTimeline && (
+            <></>
+          )}
         </SlideDown>
       </div>
     </div>

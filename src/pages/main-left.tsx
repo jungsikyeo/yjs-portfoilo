@@ -20,33 +20,31 @@ export const MainLeft = (props: any) => {
         <AboutMe
           onMenuHandler={props.onMenuHandler}
           menuState={props.menuState}
-          settingState={props.settingState}
+          toggleState={props.toggleState}
         />
         <RecentProjects
           onMenuHandler={props.onMenuHandler}
           menuState={props.menuState}
-          settingState={props.settingState}
+          toggleState={props.toggleState}
         />
         <TechSkills
           onMenuHandler={props.onMenuHandler}
           menuState={props.menuState}
-          settingState={props.settingState}
+          toggleState={props.toggleState}
         />
         <Timeline
           onMenuHandler={props.onMenuHandler}
           menuState={props.menuState}
-          settingState={props.settingState}
+          toggleState={props.toggleState}
         />
         <LicenseList
           onMenuHandler={props.onMenuHandler}
           menuState={props.menuState}
-          onToggleHandler={props.onToggleHandler}
           toggleState={props.toggleState}
         />
         <GithubRepos
           onMenuHandler={props.onMenuHandler}
           menuState={props.menuState}
-          onToggleHandler={props.onToggleHandler}
           toggleState={props.toggleState}
           repos={props.repos}
         />

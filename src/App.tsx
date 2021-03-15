@@ -56,45 +56,20 @@ function App() {
   const [toggleState, setToggleSate] = useState(menuList);
   const onMenuHandler = async (e: any) => {
     const newMenuState = { ...menuState };
-    const activeMenu = e.target.id;
+    const newToggleState = { ...toggleState };
+    const activeMenu = e.currentTarget.id;
     for (let key in newMenuState) {
-      key === activeMenu
-        ? await (newMenuState[key] = true)
-        : await (newMenuState[key] = false);
+      if (key === activeMenu) {
+        await (newMenuState[key] = true);
+        await (newToggleState[key] = !newToggleState[key]);
+      } else {
+        await (newMenuState[key] = false);
+        await (newToggleState[key] = false);
+      }
     }
     await setMenuState(newMenuState);
-    await onToggleHandler(e);
-  };
-  const onToggleHandler = async (e: any) => {
-    const newToggleState = { ...toggleState };
-    const activeMenu = e.target.id;
-    for (let key in newToggleState) {
-      key === activeMenu
-        ? await (newToggleState[key] = true)
-        : await (newToggleState[key] = false);
-    }
     await setToggleSate(newToggleState);
   };
-  /*
-  const [menuState, setMenuState] = useState(menuList);
-  const [settingState, setSettingSate] = useState(false);
-  const onMenuHandler = async (e: any) => {
-    const newMenuState = { ...menuState };
-    const activeMenu = e.currentTarget.id;
-    if (activeMenu !== "menuSettings") {
-      for (let key in newMenuState) {
-        key === activeMenu
-          ? await (newMenuState[key] = true)
-          : await (newMenuState[key] = false);
-      }
-      setSettingSate(false);
-    } else {
-      setSettingSate(!settingState);
-      await (newMenuState["menuSettings"] = true);
-    }
-    await setMenuState(newMenuState);
-  };
-  */
 
   return (
     <div
@@ -119,13 +94,11 @@ function App() {
               onThemeHandler={onThemeHandler}
               onMenuHandler={onMenuHandler}
               menuState={menuState}
-              onToggleHandler={onToggleHandler}
               toggleState={toggleState}
             />
             <MainLeft
               onMenuHandler={onMenuHandler}
               menuState={menuState}
-              onToggleHandler={onToggleHandler}
               toggleState={toggleState}
               repos={repos}
             />

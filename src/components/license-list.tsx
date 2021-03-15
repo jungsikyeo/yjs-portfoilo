@@ -1,13 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { SlideDown } from "react-slidedown";
 
 export const LicenseList = (props: any) => {
-  const [openState, setOpenState] = useState(false);
-  const onToggle = (e: any) => {
-    setOpenState(!openState);
-    props.onMenuHandler(e);
-  };
-
   return (
     <div
       className={`${
@@ -16,19 +10,23 @@ export const LicenseList = (props: any) => {
     >
       <div
         id="menuLicense"
-        onClick={onToggle}
+        onClick={props.onMenuHandler}
         className="component cursor-pointer codicon flex items-center"
       >
         <span
           className={`text-xs font-black pl-2 flex items-center 
                 ${
-                  openState ? `codicon-chevron-down` : `codicon-chevron-right`
+                  props.menuState.menuLicense && props.toggleState.menuLicense
+                    ? `codicon-chevron-down`
+                    : `codicon-chevron-right`
                 }`}
         >
           LICENSE
         </span>
         <SlideDown className="my-dropdown-slidedown">
-          {openState && <></>}
+          {props.menuState.menuLicense && props.toggleState.menuLicense && (
+            <></>
+          )}
         </SlideDown>
       </div>
     </div>

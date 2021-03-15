@@ -1,13 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { SlideDown } from "react-slidedown";
 
 export const RecentProjects = (props: any) => {
-  const [openState, setOpenState] = useState(false);
-  const onToggle = (e: any) => {
-    setOpenState(!openState);
-    props.onMenuHandler(e);
-  };
-
   return (
     <div
       className={`${
@@ -18,19 +12,23 @@ export const RecentProjects = (props: any) => {
     >
       <div
         id="menuRecentProjects"
-        onClick={onToggle}
+        onClick={props.onMenuHandler}
         className="component cursor-pointer codicon flex items-center"
       >
         <span
           className={`text-xs font-black pl-2 flex items-center 
                 ${
-                  openState ? `codicon-chevron-down` : `codicon-chevron-right`
+                  props.menuState.menuRecentProjects &&
+                  props.toggleState.menuRecentProjects
+                    ? `codicon-chevron-down`
+                    : `codicon-chevron-right`
                 }`}
         >
           RECENT PROJECTS
         </span>
         <SlideDown className="my-dropdown-slidedown">
-          {openState && <></>}
+          {props.menuState.menuRecentProjects &&
+            props.toggleState.menuRecentProjects && <></>}
         </SlideDown>
       </div>
     </div>
