@@ -10,6 +10,8 @@ html {
   --primaryBackground: rgb(40, 42, 54);
   --primaryTextColor: rgb(255, 255, 255);
 
+  --appScrollBackground: rgb(72, 73, 80);
+
   --menuBarBackground: rgb(52, 56, 70);
   --menuBarPrimaryFontColor: rgb(98, 114, 164);
   --menuBarSecondFontColor: rgb(255, 255, 255);
@@ -32,6 +34,7 @@ html {
   --contentsBackground: rgb(40, 42, 54);
   --contentsTabBackground: rgb(25, 26, 33);
   --contentsTabTopBorderColor: rgb(189, 147, 249);
+  --contentsContentLineNumberFontColor: rgb(98, 114, 164);
 
   --terminalBackground: rgb(40, 42, 54);
   --terminalTopBorderColor: rgb(189, 147, 249);
@@ -42,6 +45,8 @@ html {
 html[data-theme="dark"] {
   --primaryBackground: rgb(40, 42, 54);
   --primaryTextColor: rgb(255, 255, 255);
+
+  --appScrollBackground: rgb(66, 66, 66);
 
   --menuBarBackground: rgb(51, 51, 51);
   --menuBarPrimaryFontColor: rgba(255, 255, 255, 0.4);
@@ -65,6 +70,7 @@ html[data-theme="dark"] {
   --contentsBackground: rgb(31, 31, 31);
   --contentsTabBackground: rgb(45, 45, 45);
   --contentsTabTopBorderColor: rgb(65, 65, 65);
+  --contentsContentLineNumberFontColor: rgba(255, 255, 255, 0.4);
 
   --terminalBackground: rgb(31, 31, 31);
   --terminalTopBorderColor: rgb(65, 65, 65);
@@ -76,4 +82,16 @@ body {
   background: var(--primaryBackground);
   color: var(--primaryTextColor);
   font-size: 11px;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  /*background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);*/
+  background-color: var(--appScrollBackground);
 }

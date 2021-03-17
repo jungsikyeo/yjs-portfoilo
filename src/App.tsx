@@ -10,6 +10,67 @@ import { Footer } from "./pages/footer";
 import { Contents } from "./pages/contents";
 import { Terminal } from "./pages/terminal";
 
+const contentTabs: any[] = [
+  {
+    icon: "warning",
+    title: "README.md",
+    showClose: true,
+    content: "프로필 페이지입니다.",
+  },
+  {
+    icon: "warning",
+    title: "TIMELINE.md",
+    showClose: true,
+    content:
+        "{\n" +
+        '"name": "Unisoft Online Exam",\n' +
+        '"url": "",\n' +
+        '"description": "Full featured examination management system",\n' +
+        '"client": "Thien An Information Technology Company",\n' +
+        '"achievement": "Being used in 2 universities even before the official launch",\n' +
+        '"duration": "4 months (2020 Mar - now)",\n' +
+        '"teamSize": 1,\n' +
+        '"roles": [\n' +
+        '"Solo developer",\n' +
+        '"Backend development",\n' +
+        '"Frontend development",\n' +
+        '"UI/UX desgign",\n' +
+        '"Software architect",\n' +
+        '"Database design"\n' +
+        "],\n" +
+        '"techs": [\n' +
+        '"Typesript",\n' +
+        '"Node.js",\n' +
+        '"Nest.js",\n' +
+        '"Vue.js",\n' +
+        '"Typeorm",\n' +
+        '"Jest",\n' +
+        '"SCSS",\n' +
+        '"Tailwindcss",\n' +
+        '"SQL Server",\n' +
+        '"Redis",\n' +
+        '"Websocket",\n' +
+        '"Windows server",\n' +
+        '"IIS",\n' +
+        '"Git"\n' +
+        "],\n" +
+        '"features": [\n' +
+        '"Question bank management",\n' +
+        '"Exam paper bank management",\n' +
+        '"Exam, Exam result, Room, Supervisor management",\n' +
+        '"Student, Class, Falcuty, Specialization management",\n' +
+        '"Admin, Role, Department management",\n' +
+        '"Dynamic authorization",\n' +
+        '"View logs and history",\n' +
+        '"Import from or export to different file format",\n' +
+        '"Manage exam participation in real-time",\n' +
+        '"Security enhancement, cheating annihilation",\n' +
+        '"Ability to integrate with existing system"\n' +
+        "]\n" +
+        "}",
+  },
+];
+
 function App() {
   let theme = localStorage.getItem("theme");
   if (!theme) {
@@ -72,9 +133,11 @@ function App() {
     await setToggleSate(newToggleState);
   };
 
+  const [allTabs, setAllTabs] = useState(contentTabs);
+
   return (
     <div
-      className="w-full h-screen"
+      className="w-full h-screen select-none"
       style={{ fontSize: "13px", lineHeight: "1.4em", zIndex: 1 }}
     >
       <div
@@ -103,8 +166,8 @@ function App() {
               toggleState={toggleState}
               repos={repos}
             />
-            <Contents />
-            <Terminal />
+            <Contents allTabs={allTabs} setAllTabs={setAllTabs} />
+            <Terminal allTabs={allTabs} setAllTabs={setAllTabs} />
           </div>
         </div>
       </div>

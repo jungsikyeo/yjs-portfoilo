@@ -1,7 +1,40 @@
 .contents-container {
-    left: 348px;
-    width: calc(100% - 348px);
-    height: 550px;
-    background-color: var(--contentsBackground);
-    z-index: 1;
+  left: 348px;
+  width: calc(100% - 348px);
+  height: 550px;
+  background-color: var(--contentsBackground);
+  z-index: 1;
+}
+.contents-container .content-nav {
+  width: 100%;
+  height: 30px;
+  padding-left: 10px;
+}
+.contents-container .content-nav .nav-view span:before {
+  padding-right: 10px;
+  font-size: 20px;
+  color: var(--primaryTextColor);
+}
+.contents-container .content-nav .nav-view span:hover:before {
+  cursor: pointer;
+  font-size: 22px;
+}
+.contents-container .content,
+.contents-container .content-preview {
+  height: 485px;
+  overflow-y: scroll;
+  border-top: 1px solid var(--contentsTabBackground);
+}
+.contents-container .content-preview {
+  padding: 15px;
+}
+.contents-container .content .line-number {
+  width: 40px;
+  color: var(--contentsContentLineNumberFontColor);
+  padding-right: 10px;
+}
+.contents-container .content .line-content {
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
