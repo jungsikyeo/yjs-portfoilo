@@ -1,0 +1,7 @@
+.contents-container {
+    left: 348px;
+    width: calc(100% - 348px);
+    height: 550px;
+    background-color: var(--contentsBackground);
+    z-index: 1;
+}
