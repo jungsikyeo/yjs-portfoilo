@@ -1,37 +1,37 @@
-.main-left {
+.explorer {
   left: 48px;
   width: 300px;
-  background-color: var(--mainLeftBackground);
+  background-color: var(--explorerBackground);
   z-index: 1;
 }
 
 .component-list {
   width: 100%;
-  color: var(--mainLeftGithubFontColor);
+  color: var(--explorerGithubFontColor);
 }
 .component-list .component-title {
   height: 35px;
 }
 .component-list .component-title span {
-  color: var(--mainLeftGithubTitleFontColor);
+  color: var(--explorerGithubTitleFontColor);
 }
 .component-list .border-select {
-  background-color: var(--mainLeftComponentBackground);
-  border: 1px solid var(--mainLeftRepositoryTitleBorderColor);
+  background-color: var(--explorerComponentBackground);
+  border: 1px solid var(--explorerRepositoryTitleBorderColor);
 }
 .component-list .border-no-select {
-  background-color: var(--mainLeftComponentBackground);
-  border-left: 1px solid var(--mainLeftBackground);
-  border-right: 1px solid var(--mainLeftBackground);
+  background-color: var(--explorerComponentBackground);
+  border-left: 1px solid var(--explorerBackground);
+  border-right: 1px solid var(--explorerBackground);
   border-top: 1px solid rgba(0, 0, 0, 0);
-  border-bottom: 1px solid var(--mainLeftComponentBorderColor);
+  border-bottom: 1px solid var(--explorerComponentBorderColor);
 }
 .component-list .component {
   height: 22px;
 }
 
 .component span {
-  color: var(--mainLeftRepositoryTitleFontColor);
+  color: var(--explorerRepositoryTitleFontColor);
 }
 .component .codicon-chevron-right:before,
 .component .codicon-chevron-down:before {
@@ -53,7 +53,7 @@
   flex-shrink: 0;
 }
 .repository-list ul li {
-  color: var(--mainLeftGithubFontColor);
+  color: var(--explorerGithubFontColor);
   height: 22px;
   font-size: 13px;
 }

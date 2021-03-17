@@ -211,7 +211,7 @@ export class Tabs extends Component {
   }
 }
 
-const Tab = ({ children, title }) => {
+const Tab = ({ children, title, icon, showClose }) => {
   return <div>{children}</div>;
 };
 

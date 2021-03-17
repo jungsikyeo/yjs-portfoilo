@@ -5,9 +5,10 @@ import "./styles/tailwind.css";
 import "./styles/theme.css";
 import "react-slidedown/lib/slidedown.css";
 import { MenuBar } from "./pages/menu-bar";
-import { MainLeft } from "./pages/main-left";
-import { MainRight } from "./pages/main-right";
+import { Explorer } from "./pages/explorer";
 import { Footer } from "./pages/footer";
+import { Contents } from "./pages/contents";
+import { Terminal } from "./pages/terminal";
 
 function App() {
   let theme = localStorage.getItem("theme");
@@ -96,13 +97,14 @@ function App() {
               menuState={menuState}
               toggleState={toggleState}
             />
-            <MainLeft
+            <Explorer
               onMenuHandler={onMenuHandler}
               menuState={menuState}
               toggleState={toggleState}
               repos={repos}
             />
-            <MainRight />
+            <Contents />
+            <Terminal />
           </div>
         </div>
       </div>

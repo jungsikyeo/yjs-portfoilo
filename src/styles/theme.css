@@ -21,15 +21,20 @@ html {
   --menuBarSettingLayerSelectBackgroundcolor: rgb(68, 71, 90);
   --menuBarLayerFontColor: rgb(255, 255, 255);
 
-  --mainLeftBackground: rgb(33, 35, 44);
-  --mainLeftComponentBorderColor: rgb(25, 26, 33);
-  --mainLeftComponentBackground: rgb(40, 42, 54);
-  --mainLeftGithubFontColor: rgb(248, 248, 242);
-  --mainLeftGithubTitleFontColor: rgb(248, 248, 242);
-  --mainLeftRepositoryTitleFontColor: rgb(248, 248, 242);
-  --mainLeftRepositoryTitleBorderColor: rgb(98, 114, 164);
+  --explorerBackground: rgb(33, 35, 44);
+  --explorerComponentBorderColor: rgb(25, 26, 33);
+  --explorerComponentBackground: rgb(40, 42, 54);
+  --explorerGithubFontColor: rgb(248, 248, 242);
+  --explorerGithubTitleFontColor: rgb(248, 248, 242);
+  --explorerRepositoryTitleFontColor: rgb(248, 248, 242);
+  --explorerRepositoryTitleBorderColor: rgb(98, 114, 164);
 
-  --mainRightBackground: rgb(52, 56, 70);
+  --contentsBackground: rgb(40, 42, 54);
+  --contentsTabBackground: rgb(25, 26, 33);
+  --contentsTabTopBorderColor: rgb(189, 147, 249);
+
+  --terminalBackground: rgb(40, 42, 54);
+  --terminalTopBorderColor: rgb(189, 147, 249);
 
   --footerBackground: rgb(25, 26, 33);
 }
@@ -49,15 +54,20 @@ html[data-theme="dark"] {
   --menuBarSettingLayerSelectBackgroundcolor: rgb(9, 71, 113);
   --menuBarLayerFontColor: rgb(178, 178, 178);
 
-  --mainLeftBackground: rgb(33, 35, 44);
-  --mainLeftComponentBorderColor: rgb(25, 26, 33);
-  --mainLeftComponentBackground: rgba(0, 0, 0, 0);
-  --mainLeftGithubFontColor: rgb(204, 204, 204);
-  --mainLeftGithubTitleFontColor: rgb(187, 187, 187);
-  --mainLeftRepositoryTitleFontColor: rgb(204, 204, 204);
-  --mainLeftRepositoryTitleBorderColor: rgb(0, 127, 212);
+  --explorerBackground: rgb(33, 35, 44);
+  --explorerComponentBorderColor: rgb(25, 26, 33);
+  --explorerComponentBackground: rgba(0, 0, 0, 0);
+  --explorerGithubFontColor: rgb(204, 204, 204);
+  --explorerGithubTitleFontColor: rgb(187, 187, 187);
+  --explorerRepositoryTitleFontColor: rgb(204, 204, 204);
+  --explorerRepositoryTitleBorderColor: rgb(0, 127, 212);
 
-  --mainRightBackground: rgb(31, 31, 31);
+  --contentsBackground: rgb(31, 31, 31);
+  --contentsTabBackground: rgb(45, 45, 45);
+  --contentsTabTopBorderColor: rgb(65, 65, 65);
+
+  --terminalBackground: rgb(31, 31, 31);
+  --terminalTopBorderColor: rgb(65, 65, 65);
 
   --footerBackground: rgb(1, 121, 203);
 }

@@ -18,7 +18,7 @@ $blue: lighten(rgb(4, 159, 217), 5%);
     left: calc(100% - 35px);
     width: 35px;
     height: 35px;
-    background: #f9f9f9;
+    background: var(--contentsBackground);
     transition: background ease 0.3s;
 
     &::before {
@@ -29,7 +29,7 @@ $blue: lighten(rgb(4, 159, 217), 5%);
       top: 16px;
       width: 17px;
       height: 3px;
-      background: #bbb;
+      background: var(--contentsBackground);
     }
 
     &::after {
@@ -40,11 +40,7 @@ $blue: lighten(rgb(4, 159, 217), 5%);
       top: 9px;
       width: 3px;
       height: 17px;
-      background: #bbb;
-    }
-
-    &:hover {
-      background: #f3f3f3;
+      background: var(--contentsBackground);
     }
   }
 
@@ -71,26 +67,14 @@ $blue: lighten(rgb(4, 159, 217), 5%);
         cursor: default;
       }
 
-      &:not(.active):hover {
-        .tab,
-        .icon.loading,
-        .icon.loading .mask {
-          background: #f3f3f3;
-        }
-
-        .shadow {
-          background: linear-gradient(to right, transparent, #f8f8f8);
-        }
-      }
-
       &.active {
         z-index: 999 !important;
 
         .tab {
-          background: #fff;
+          background: var(--contentsBackground);
           border-width: 2px 0 0;
           border-style: solid;
-          border-color: $blue;
+          border-color: var(--contentsTabTopBorderColor);
         }
 
         .icon.loading,
@@ -114,7 +98,7 @@ $blue: lighten(rgb(4, 159, 217), 5%);
       vertical-align: top;
       margin-top: 4px;
       padding: 0 30px;
-      background: #f9f9f9;
+      background: var(--contentsTabBackground);
       z-index: 0;
       transition: background ease 0.3s;
       user-select: none;

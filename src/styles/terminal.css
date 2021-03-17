@@ -1,0 +1,8 @@
+.terminal {
+    top: 550px;
+    left: 348px;
+    width: calc(100% - 348px);
+    height: calc(100% - 550px);
+    border-top: 1px solid var(--terminalTopBorderColor);
+    background-color: var(--terminalBackground);
+}
