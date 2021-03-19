@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Tabs, { Tab } from "./tabs";
+import Tabs, { Tab } from "../components/tabs";
 import "../styles/theme.css";
 import "../styles/contents.css";
 import "../styles/react-tabs.scss";
@@ -43,7 +43,10 @@ export const Contents = (props: any) => {
   };
 
   return (
-    <div className="contents-container absolute whitespace-normal">
+    <div
+      className="contents-container absolute whitespace-normal"
+      ref={props.contentRef}
+    >
       <Tabs
         active={activeTab}
         onTabSwitch={handleTabSwitch}
@@ -77,9 +80,9 @@ export const Contents = (props: any) => {
           />
         </div>
       </div>
-      <div className="flex">
+      <div className="flex content-wrapper" style={{ height: "calc(100% - 65px)" }}>
         <div
-          className="content"
+          className="content h-full"
           style={{
             width: viewMode === 0 ? "100%" : "50%",
             display: viewMode === 2 ? "none" : "block",
@@ -99,7 +102,7 @@ export const Contents = (props: any) => {
             })}
         </div>
         <div
-          className="content-preview bg-white"
+          className="content-preview h-full bg-white"
           style={{
             width: viewMode === 2 ? "100%" : "50%",
             display: viewMode === 0 ? "none" : "block",

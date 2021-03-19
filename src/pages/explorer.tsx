@@ -10,8 +10,8 @@ import { AboutMe } from "../components/about-me";
 
 export const Explorer = (props: any) => {
   return (
-    <div className="explorer h-full absolute whitespace-normal">
-      <div className="w-full h-full component-list text-xs resize-x">
+    <div className="explorer h-full absolute whitespace-normal" ref={props.explorerRef}>
+      <div className="w-full h-full component-list text-xs">
         <div className="component-title pl-5 flex items-center">
           <span className="text-xs font-medium overflow-hidden whitespace-nowrap overflow-ellipsis">
             EXPLORER
