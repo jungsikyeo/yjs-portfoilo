@@ -219,7 +219,6 @@ function App() {
       explorerPanel.style.transition = "";
       setExplorerViewState(true);
     }
-    console.log(explorerViewState);
   }, [size]);
   const onExplorerMenuHandler = () => {
     const explorerPanel = explorerRef.current;
