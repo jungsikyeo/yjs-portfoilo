@@ -131,11 +131,11 @@ function App() {
     }
     await setMenuState(newMenuState);
     await setToggleSate(newToggleState);
+    await onExplorerMenuHandler();
   };
 
   const [allTabs, setAllTabs] = useState(contentTabs);
 
-  const [explorerViewState, setExplorerViewState] = useState(true);
   const explorerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
@@ -204,7 +204,33 @@ function App() {
 
     return windowSize;
   };
-  useWindowSize();
+
+  const size = useWindowSize();
+  const [explorerViewState, setExplorerViewState] = useState(true);
+  useEffect(() => {
+    const explorerPanel = explorerRef.current;
+    if (!explorerPanel) {
+      return;
+    }
+    if (+explorerPanel.style.left.replaceAll("px", "") < 0) {
+      setExplorerViewState(false);
+    } else {
+      explorerPanel.style.transform = "";
+      explorerPanel.style.transition = "";
+      setExplorerViewState(true);
+    }
+    console.log(explorerViewState);
+  }, [size]);
+  const onExplorerMenuHandler = () => {
+    const explorerPanel = explorerRef.current;
+    if (!explorerPanel) {
+      return;
+    }
+    if (!explorerViewState) {
+      explorerPanel.style.transform = "translateX(348px)";
+      explorerPanel.style.transition = "all .5s ease";
+    }
+  };
 
   return (
     <div
@@ -245,6 +271,7 @@ function App() {
               onMenuHandler={onMenuHandler}
               menuState={menuState}
               toggleState={toggleState}
+              explorerViewState={explorerViewState}
               repos={repos}
               explorerRef={explorerRef}
             />
