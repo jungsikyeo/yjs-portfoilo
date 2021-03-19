@@ -1,4 +1,4 @@
-/*! tailwindcss v2.0.3 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v2.0.4 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
@@ -3388,7 +3388,6 @@ video {
 
 .appearance-none {
   -webkit-appearance: none;
-     -moz-appearance: none;
           appearance: none;
 }
 
@@ -15324,13 +15323,11 @@ video {
 
 .max-w-min {
   max-width: -webkit-min-content;
-  max-width: -moz-min-content;
   max-width: min-content;
 }
 
 .max-w-max {
   max-width: -webkit-max-content;
-  max-width: -moz-max-content;
   max-width: max-content;
 }
 
@@ -15380,13 +15377,11 @@ video {
 
 .min-w-min {
   min-width: -webkit-min-content;
-  min-width: -moz-min-content;
   min-width: min-content;
 }
 
 .min-w-max {
   min-width: -webkit-max-content;
-  min-width: -moz-max-content;
   min-width: max-content;
 }
 
@@ -28439,13 +28434,11 @@ video {
 
 .w-min {
   width: -webkit-min-content;
-  width: -moz-min-content;
   width: min-content;
 }
 
 .w-max {
   width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
 }
 
@@ -35394,7 +35387,6 @@ video {
 
   .sm\:appearance-none {
     -webkit-appearance: none;
-       -moz-appearance: none;
             appearance: none;
   }
 
@@ -47330,13 +47322,11 @@ video {
 
   .sm\:max-w-min {
     max-width: -webkit-min-content;
-    max-width: -moz-min-content;
     max-width: min-content;
   }
 
   .sm\:max-w-max {
     max-width: -webkit-max-content;
-    max-width: -moz-max-content;
     max-width: max-content;
   }
 
@@ -47386,13 +47376,11 @@ video {
 
   .sm\:min-w-min {
     min-width: -webkit-min-content;
-    min-width: -moz-min-content;
     min-width: min-content;
   }
 
   .sm\:min-w-max {
     min-width: -webkit-max-content;
-    min-width: -moz-max-content;
     min-width: max-content;
   }
 
@@ -60432,13 +60420,11 @@ video {
 
   .sm\:w-min {
     width: -webkit-min-content;
-    width: -moz-min-content;
     width: min-content;
   }
 
   .sm\:w-max {
     width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
   }
 
@@ -67314,7 +67300,6 @@ video {
 
   .md\:appearance-none {
     -webkit-appearance: none;
-       -moz-appearance: none;
             appearance: none;
   }
 
@@ -79250,13 +79235,11 @@ video {
 
   .md\:max-w-min {
     max-width: -webkit-min-content;
-    max-width: -moz-min-content;
     max-width: min-content;
   }
 
   .md\:max-w-max {
     max-width: -webkit-max-content;
-    max-width: -moz-max-content;
     max-width: max-content;
   }
 
@@ -79306,13 +79289,11 @@ video {
 
   .md\:min-w-min {
     min-width: -webkit-min-content;
-    min-width: -moz-min-content;
     min-width: min-content;
   }
 
   .md\:min-w-max {
     min-width: -webkit-max-content;
-    min-width: -moz-max-content;
     min-width: max-content;
   }
 
@@ -92352,13 +92333,11 @@ video {
 
   .md\:w-min {
     width: -webkit-min-content;
-    width: -moz-min-content;
     width: min-content;
   }
 
   .md\:w-max {
     width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
   }
 
@@ -99234,7 +99213,6 @@ video {
 
   .lg\:appearance-none {
     -webkit-appearance: none;
-       -moz-appearance: none;
             appearance: none;
   }
 
@@ -111170,13 +111148,11 @@ video {
 
   .lg\:max-w-min {
     max-width: -webkit-min-content;
-    max-width: -moz-min-content;
     max-width: min-content;
   }
 
   .lg\:max-w-max {
     max-width: -webkit-max-content;
-    max-width: -moz-max-content;
     max-width: max-content;
   }
 
@@ -111226,13 +111202,11 @@ video {
 
   .lg\:min-w-min {
     min-width: -webkit-min-content;
-    min-width: -moz-min-content;
     min-width: min-content;
   }
 
   .lg\:min-w-max {
     min-width: -webkit-max-content;
-    min-width: -moz-max-content;
     min-width: max-content;
   }
 
@@ -124272,13 +124246,11 @@ video {
 
   .lg\:w-min {
     width: -webkit-min-content;
-    width: -moz-min-content;
     width: min-content;
   }
 
   .lg\:w-max {
     width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
   }
 
@@ -131154,7 +131126,6 @@ video {
 
   .xl\:appearance-none {
     -webkit-appearance: none;
-       -moz-appearance: none;
             appearance: none;
   }
 
@@ -143090,13 +143061,11 @@ video {
 
   .xl\:max-w-min {
     max-width: -webkit-min-content;
-    max-width: -moz-min-content;
     max-width: min-content;
   }
 
   .xl\:max-w-max {
     max-width: -webkit-max-content;
-    max-width: -moz-max-content;
     max-width: max-content;
   }
 
@@ -143146,13 +143115,11 @@ video {
 
   .xl\:min-w-min {
     min-width: -webkit-min-content;
-    min-width: -moz-min-content;
     min-width: min-content;
   }
 
   .xl\:min-w-max {
     min-width: -webkit-max-content;
-    min-width: -moz-max-content;
     min-width: max-content;
   }
 
@@ -156192,13 +156159,11 @@ video {
 
   .xl\:w-min {
     width: -webkit-min-content;
-    width: -moz-min-content;
     width: min-content;
   }
 
   .xl\:w-max {
     width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
   }
 
@@ -163074,7 +163039,6 @@ video {
 
   .\32xl\:appearance-none {
     -webkit-appearance: none;
-       -moz-appearance: none;
             appearance: none;
   }
 
@@ -175010,13 +174974,11 @@ video {
 
   .\32xl\:max-w-min {
     max-width: -webkit-min-content;
-    max-width: -moz-min-content;
     max-width: min-content;
   }
 
   .\32xl\:max-w-max {
     max-width: -webkit-max-content;
-    max-width: -moz-max-content;
     max-width: max-content;
   }
 
@@ -175066,13 +175028,11 @@ video {
 
   .\32xl\:min-w-min {
     min-width: -webkit-min-content;
-    min-width: -moz-min-content;
     min-width: min-content;
   }
 
   .\32xl\:min-w-max {
     min-width: -webkit-max-content;
-    min-width: -moz-max-content;
     min-width: max-content;
   }
 
@@ -188112,13 +188072,11 @@ video {
 
   .\32xl\:w-min {
     width: -webkit-min-content;
-    width: -moz-min-content;
     width: min-content;
   }
 
   .\32xl\:w-max {
     width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
   }
 

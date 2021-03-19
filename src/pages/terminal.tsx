@@ -37,7 +37,7 @@ const TerminalHeader = ({ onDrag }: any) => {
 export const Terminal = (props: any) => {
   return (
     <div
-      className="terminal absolute whitespace-normal sm:hidden md:block box-border"
+      className="terminal absolute whitespace-normal box-border"
       ref={props.terminalRef}
     >
       <TerminalHeader onDrag={props.handleDrag} />

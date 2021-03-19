@@ -135,6 +135,7 @@ function App() {
 
   const [allTabs, setAllTabs] = useState(contentTabs);
 
+  const [explorerViewState, setExplorerViewState] = useState(true);
   const explorerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
@@ -144,9 +145,9 @@ function App() {
     if (!contentPanel || !terminalPanel) {
       return;
     }
-    const { y: terminalY, height: terminalHeight } = terminalPanel.getBoundingClientRect();
+    const { y: terminalY } = terminalPanel.getBoundingClientRect();
     const top = terminalY + movementY;
-    if (top > 200 && document.body.offsetHeight - 60 > top) {
+    if (top > 200 && document.body.offsetHeight - 200 > top) {
       terminalPanel.style.top = `${terminalY + movementY}px`;
       terminalPanel.style.height = `calc(100% - ${terminalY + movementY}px)`;
       contentPanel.style.height = `${terminalY + movementY}px`;
@@ -181,23 +182,24 @@ function App() {
       return;
     }
     if (window.innerHeight <= 300) {
-      terminalPanel.style.display = "none";
-      contentPanel.style.height = `100%`;
-    } else {
       terminalPanel.style.display = "block";
       terminalPanel.style.height = "30%";
       terminalPanel.style.top = "70%";
       contentPanel.style.height = "70%";
     }
 
-    if (window.innerWidth <= 300) {
-      explorerPanel.style.display = "none";
+    if (contentPanel.clientWidth <= 700) {
+      explorerPanel.style.left = "-300px";
       terminalPanel.style.width = "calc(100% - 48px)";
+      terminalPanel.style.left = "48px";
       contentPanel.style.width = "calc(100% - 48px)";
+      contentPanel.style.left = "48px";
     } else {
-      explorerPanel.style.display = "block";
+      explorerPanel.style.left = "48px";
       terminalPanel.style.width = "";
+      terminalPanel.style.left = "";
       contentPanel.style.width = "";
+      contentPanel.style.left = "";
     }
 
     return windowSize;
@@ -207,9 +209,16 @@ function App() {
   return (
     <div
       className="w-full h-screen select-none"
-      style={{ fontSize: "13px", lineHeight: "1.4em", zIndex: 1 }}
+      style={{
+        fontSize: "13px",
+        lineHeight: "1.4em",
+        zIndex: 1,
+        minWidth: "500px",
+        minHeight: "522px",
+      }}
     >
       <div
+        className="w-full"
         style={{
           top: "0px",
           height: "calc(100% - 22px)",
@@ -222,7 +231,10 @@ function App() {
             height: "calc(100% - 22px)",
           }}
         >
-          <div className="w-full h-full relative whitespace-nowrap">
+          <div
+            className="w-full h-full relative whitespace-nowrap"
+            style={{ minHeight: "500px" }}
+          >
             <MenuBar
               onThemeHandler={onThemeHandler}
               onMenuHandler={onMenuHandler}
