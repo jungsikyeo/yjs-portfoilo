@@ -26,8 +26,8 @@ html {
   --explorerBackground: rgb(33, 35, 44);
   --explorerComponentBorderColor: rgb(25, 26, 33);
   --explorerComponentBackground: rgb(40, 42, 54);
-  --explorerGithubFontColor: rgb(248, 248, 242);
-  --explorerGithubTitleFontColor: rgb(248, 248, 242);
+  --explorerComponentlistFontColor: rgb(248, 248, 242);
+  --explorerComponentTitleFontColor: rgb(248, 248, 242);
   --explorerRepositoryTitleFontColor: rgb(248, 248, 242);
   --explorerRepositoryTitleBorderColor: rgb(98, 114, 164);
 
@@ -68,8 +68,8 @@ html[data-theme="dark"] {
   --explorerBackground: rgb(33, 35, 44);
   --explorerComponentBorderColor: rgb(25, 26, 33);
   --explorerComponentBackground: rgba(0, 0, 0, 0);
-  --explorerGithubFontColor: rgb(204, 204, 204);
-  --explorerGithubTitleFontColor: rgb(187, 187, 187);
+  --explorerComponentlistFontColor: rgb(204, 204, 204);
+  --explorerComponentTitleFontColor: rgb(187, 187, 187);
   --explorerRepositoryTitleFontColor: rgb(204, 204, 204);
   --explorerRepositoryTitleBorderColor: rgb(0, 127, 212);
 

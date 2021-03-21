@@ -26,11 +26,11 @@ export const RecentProjects = (props: any) => {
         >
           RECENT PROJECTS
         </span>
-        <SlideDown className="my-dropdown-slidedown">
-          {props.menuState.menuRecentProjects &&
-            props.toggleState.menuRecentProjects && <></>}
-        </SlideDown>
       </div>
+      <SlideDown className="my-dropdown-slidedown">
+        {props.menuState.menuRecentProjects &&
+        props.toggleState.menuRecentProjects && <></>}
+      </SlideDown>
     </div>
   );
 };

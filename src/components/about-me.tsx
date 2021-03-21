@@ -23,12 +23,24 @@ export const AboutMe = (props: any) => {
         >
           ABOUT ME
         </span>
-        <SlideDown className="my-dropdown-slidedown">
-          {props.menuState.menuAboutMe && props.toggleState.menuAboutMe && (
-            <></>
-          )}
-        </SlideDown>
       </div>
+      <SlideDown className="my-dropdown-slidedown">
+        {props.menuState.menuAboutMe && props.toggleState.menuAboutMe && (
+          <div className="repository-list pl-5">
+            <ul className="codicon">
+              <li
+                key="README.md"
+                id="README.md"
+                className={`py-0.5 cursor-pointer flex items-center`}
+              >
+                <div className="markdown flex items-center" title={`README.md`}>
+                  README.md
+                </div>
+              </li>
+            </ul>
+          </div>
+        )}
+      </SlideDown>
     </div>
   );
 };

@@ -23,12 +23,12 @@ export const LicenseList = (props: any) => {
         >
           LICENSE
         </span>
-        <SlideDown className="my-dropdown-slidedown">
-          {props.menuState.menuLicense && props.toggleState.menuLicense && (
-            <></>
-          )}
-        </SlideDown>
       </div>
+      <SlideDown className="my-dropdown-slidedown">
+        {props.menuState.menuLicense && props.toggleState.menuLicense && (
+            <></>
+        )}
+      </SlideDown>
     </div>
   );
 };
