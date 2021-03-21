@@ -12,7 +12,7 @@
 
 .explorer {
   left: 48px;
-  width: 300px;
+  width: 200px;
   background-color: var(--explorerBackground);
   z-index: 10;
   overflow-y: auto;
@@ -52,6 +52,12 @@
   font-size: 16px;
 }
 
+.repository-list .folder {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .repository-list .folder:before {
   width: 22px;
   height: 22px;

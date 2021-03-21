@@ -12,7 +12,12 @@ const TerminalHeader = ({ onDrag }: any) => {
   }, []);
 
   useEffect(() => {
-    const handleMouseMove = (e: any) => onDrag(e.movementX, e.movementY);
+    const handleMouseMove = (e: any) => {
+      if (e.pageY < 60) {
+        return () => window.removeEventListener("mousemove", handleMouseMove);
+      }
+      onDrag(e.movementX, e.movementY, e.pageY);
+    };
     if (mouseDown) {
       window.addEventListener("mousemove", handleMouseMove);
     }

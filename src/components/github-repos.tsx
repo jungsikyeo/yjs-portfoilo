@@ -39,7 +39,7 @@ export const GithubRepos = (props: any) => {
                       }
                       `}
                 >
-                  <div className="folder">{repo["name"]}</div>
+                  <div className="folder" title={repo["name"]}>{repo["name"]}</div>
                 </li>
               ))}
             </ul>

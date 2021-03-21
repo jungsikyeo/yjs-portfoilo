@@ -35,6 +35,12 @@ html {
   --contentsTabBackground: rgb(25, 26, 33);
   --contentsTabTopBorderColor: rgb(189, 147, 249);
   --contentsContentLineNumberFontColor: rgb(98, 114, 164);
+  --contentsContentMarkdownHFontColor: rgb(189, 147,249);
+  --contentsContentMarkdownPFontColor: rgb(248, 248, 242);
+  --contentsContentMarkdownImgFontColor: rgb(255, 121, 198);
+  --contentsContentMarkdownLinkFontColor: rgb(139, 233, 253);
+  --contentsContentMarkdownBlockquoteFontColor: rgb(241, 250, 140);
+  --contentsContentMarkdownPreFontColor: rgb(80, 250, 123);
 
   --terminalBackground: rgb(40, 42, 54);
   --terminalTopBorderColor: rgb(189, 147, 249);
@@ -71,6 +77,12 @@ html[data-theme="dark"] {
   --contentsTabBackground: rgb(45, 45, 45);
   --contentsTabTopBorderColor: rgb(65, 65, 65);
   --contentsContentLineNumberFontColor: rgba(255, 255, 255, 0.4);
+  --contentsContentMarkdownHFontColor: rgb(86, 156, 214);
+  --contentsContentMarkdownPFontColor: rgb(212, 212, 212);
+  --contentsContentMarkdownImgFontColor: rgb(206, 145, 120);
+  --contentsContentMarkdownLinkFontColor: rgb(212, 212, 212);
+  --contentsContentMarkdownBlockquoteFontColor: rgb(106, 153, 85);
+  --contentsContentMarkdownPreFontColor: rgb(212, 212, 212);
 
   --terminalBackground: rgb(31, 31, 31);
   --terminalTopBorderColor: rgb(65, 65, 65);

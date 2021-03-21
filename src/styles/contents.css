@@ -1,6 +1,6 @@
 .contents-container {
-  left: 348px;
-  width: calc(100% - 348px);
+  left: 248px;
+  width: calc(100% - 248px);
   height: 550px;
   background-color: var(--contentsBackground);
   z-index: 1;
@@ -33,7 +33,26 @@
   padding-right: 10px;
 }
 .contents-container .content .line-content {
-  width: 100%;
+  width: calc(100% - 40px);
   padding-left: 5px;
   padding-right: 5px;
+}
+
+.minimapWindow {
+  width: 120px;
+  height: 200px;
+  overflow: auto;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.minimapWindow__preview {
+  width: 50vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  transform-origin: left top;
+  max-height: 200vh;
+  overflow: hidden;
 }

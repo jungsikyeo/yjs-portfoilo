@@ -8,7 +8,7 @@ export const Footer = () => {
         top: "calc(100% - 22px)",
         height: "22px",
         background: "var(--footerBackground)",
-        zIndex: 1,
+        zIndex: 200,
       }}
     >
       <span className="absolute">footer</span>
