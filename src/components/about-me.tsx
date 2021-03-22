@@ -2,6 +2,9 @@ import React from "react";
 import { SlideDown } from "react-slidedown";
 
 export const AboutMe = (props: any) => {
+  const pageList = props.allContents.filter(
+    (item: any) => item.name === "ABOUT ME"
+  );
   return (
     <div
       className={`${
@@ -26,17 +29,25 @@ export const AboutMe = (props: any) => {
       </div>
       <SlideDown className="my-dropdown-slidedown">
         {props.menuState.menuAboutMe && props.toggleState.menuAboutMe && (
-          <div className="repository-list pl-5">
+          <div className="repository-list">
             <ul className="codicon">
-              <li
-                key="README.md"
-                id="README.md"
-                className={`py-0.5 cursor-pointer flex items-center`}
-              >
-                <div className="markdown flex items-center" title={`README.md`}>
-                  README.md
-                </div>
-              </li>
+              {pageList.map((page: any) => {
+                return (
+                  <li
+                    key={page.title}
+                    id={page.title}
+                    onClick={() => props.onAddTabsHandler(page.title)}
+                    className={`py-0.5 cursor-pointer flex items-center`}
+                  >
+                    <div
+                      className={`${page.icon} flex items-center px-5`}
+                      title={page.title}
+                    >
+                      {page.title}
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         )}

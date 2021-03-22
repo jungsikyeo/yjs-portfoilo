@@ -6,10 +6,11 @@ import "../styles/react-tabs.scss";
 import ReactMarkdown from "react-markdown";
 import { useRef } from "react";
 import Minimap from "../components/minimap";
+import ReactScrollWheelHandler from "../components/ReactScrollWheelHandler";
 
 export const Contents = (props: any) => {
   let localViewMode = localStorage.getItem("viewMode");
-  if(!localViewMode) {
+  if (!localViewMode) {
     localViewMode = "2";
     localStorage.setItem("viewMode", "2");
   }
@@ -19,10 +20,10 @@ export const Contents = (props: any) => {
   const leftContent = useRef<HTMLDivElement>(null);
   const rightContent = useRef<HTMLDivElement>(null);
 
-  const onViewMode = (mode:number) => {
-    localStorage.setItem("viewMode", mode+"");
+  const onViewMode = (mode: number) => {
+    localStorage.setItem("viewMode", mode + "");
     setViewMode(mode);
-  }
+  };
 
   const onScroll = (panel: string) => {
     if (!panel || !(panel === "left" || panel === "right")) {
@@ -153,7 +154,7 @@ export const Contents = (props: any) => {
         ))}
       </Tabs>
       <div className="content-nav flex items-center justify-between">
-        <div className="nav-title">{currentTab?.title}</div>
+        <div className="nav-title">{`${currentTab?.name} > ${currentTab?.title}`}</div>
         <div className="nav-view codicon">
           <span
             onClick={() => onViewMode(0)}
@@ -183,41 +184,54 @@ export const Contents = (props: any) => {
             display: viewMode === 2 ? "none" : "block",
           }}
           ref={leftContent}
-          onScroll={() => onScroll("left")}
         >
           <div className="w-full">
             <div style={{ width: "calc(100% - 60px)" }}>
-              {currentTab?.content
-                .split("\n")
-                .map((lineContent: string, index: number) => {
-                  return (
-                    <div>
-                      {index === 0 && (
-                        <div style={{
-                          width: "120px",
-                          height: "200px",
-                          position: "absolute",
-                          top: "65px",
-                          right: `calc(${viewMode === 1 ? `50%` : `0%`} - 50px)`
-                        }}>
-                          <Minimap of={minimap} width={120} height={200} />
-                        </div>
-                      )}
-                      <div className="flex">
-                        <div className="line-number flex justify-end">
-                          {index + 1}
-                        </div>
-                        <div className="line-content select-text">
+              {``}
+              <ReactScrollWheelHandler
+                upHandler={() => onScroll("left")}
+                downHandler={() => onScroll("left")}
+                timeout={0}
+                style={{
+                  outline: "none",
+                }}
+              >
+                {currentTab?.content
+                  .split("\n")
+                  .map((lineContent: string, index: number) => {
+                    return (
+                      <div>
+                        {index === 0 && (
                           <div
-                            dangerouslySetInnerHTML={{
-                              __html: parseMd(lineContent),
+                            style={{
+                              width: "120px",
+                              height: "200px",
+                              position: "absolute",
+                              top: "65px",
+                              right: `calc(${
+                                viewMode === 1 ? `50%` : `0%`
+                              } - 50px)`,
                             }}
-                          />
+                          >
+                            <Minimap of={minimap} width={120} height={200} />
+                          </div>
+                        )}
+                        <div className="flex">
+                          <div className="line-number flex justify-end">
+                            {index + 1}
+                          </div>
+                          <div className="line-content select-text">
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html: parseMd(lineContent),
+                              }}
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+              </ReactScrollWheelHandler>
             </div>
           </div>
         </div>
@@ -228,13 +242,21 @@ export const Contents = (props: any) => {
             display: viewMode === 0 ? "none" : "block",
           }}
           ref={rightContent}
-          onScroll={() => onScroll("right")}
         >
-          <article className="prose">
-            <ReactMarkdown allowDangerousHtml>
-              {currentTab?.content}
-            </ReactMarkdown>
-          </article>
+          <ReactScrollWheelHandler
+            upHandler={() => onScroll("right")}
+            downHandler={() => onScroll("right")}
+            timeout={0}
+            style={{
+              outline: "none",
+            }}
+          >
+            <article className="prose">
+              <ReactMarkdown allowDangerousHtml>
+                {currentTab?.content}
+              </ReactMarkdown>
+            </article>
+          </ReactScrollWheelHandler>
         </div>
       </div>
     </div>

@@ -27,6 +27,7 @@ html {
   --explorerComponentBorderColor: rgb(25, 26, 33);
   --explorerComponentBackground: rgb(40, 42, 54);
   --explorerComponentlistFontColor: rgb(248, 248, 242);
+  --explorerComponentlistSelectBackgroundColor: rgb(68, 72, 89);
   --explorerComponentTitleFontColor: rgb(248, 248, 242);
   --explorerRepositoryTitleFontColor: rgb(248, 248, 242);
   --explorerRepositoryTitleBorderColor: rgb(98, 114, 164);
@@ -69,6 +70,7 @@ html[data-theme="dark"] {
   --explorerComponentBorderColor: rgb(25, 26, 33);
   --explorerComponentBackground: rgba(0, 0, 0, 0);
   --explorerComponentlistFontColor: rgb(204, 204, 204);
+  --explorerComponentlistSelectBackgroundColor: rgb(11, 71, 113);
   --explorerComponentTitleFontColor: rgb(187, 187, 187);
   --explorerRepositoryTitleFontColor: rgb(204, 204, 204);
   --explorerRepositoryTitleBorderColor: rgb(0, 127, 212);

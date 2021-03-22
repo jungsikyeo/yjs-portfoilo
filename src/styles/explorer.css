@@ -52,36 +52,59 @@
   font-size: 16px;
 }
 
-.repository-list .folder,
-.repository-list .markdown {
+.repository-list .codicon-link,
+.repository-list .markdown,
+.repository-list .html,
+.repository-list .json {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.repository-list .folder:before,
-.repository-list .markdown:before {
+.repository-list .markdown:before,
+.repository-list .html:before,
+.repository-list .json:before {
   width: 22px;
   height: 22px;
-  content: ' ';
+  content: " ";
   background-size: 16px;
   background-position: 0;
   background-repeat: no-repeat;
-  line-height: inherit!important;
+  line-height: inherit !important;
   display: inline-block;
   vertical-align: top;
   flex-shrink: 0;
 }
-.repository-list .folder:before {
-  background-image: url("../images/folder.svg");
+.repository-list .codicon-link:before {
+  width: 22px;
+  height: 22px;
+  content: "\eb15";
+  background-size: 16px;
+  background-position: 0;
+  background-repeat: no-repeat;
+  line-height: inherit !important;
+  vertical-align: bottom;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .repository-list .markdown:before {
   background-image: url("../images/md.svg");
+}
+.repository-list .html:before {
+  background-image: url("../images/html.svg");
+}
+.repository-list .json:before {
+  background-image: url("../images/json.svg");
 }
 .repository-list ul li {
   color: var(--explorerComponentlistFontColor);
   height: 22px;
   font-size: 13px;
+}
+.repository-list ul li:hover {
+  background-color: var(--explorerComponentlistSelectBackgroundColor);
 }
 .repository-list .codicon-chevron-right:before,
 .repository-list .codicon-chevron-down:before {

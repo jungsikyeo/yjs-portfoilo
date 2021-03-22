@@ -2,6 +2,9 @@ import React from "react";
 import { SlideDown } from "react-slidedown";
 
 export const RecentProjects = (props: any) => {
+  const pageList = props.allContents.filter(
+    (item: any) => item.name === "RECENT PROJECTS"
+  );
   return (
     <div
       className={`${
@@ -29,7 +32,29 @@ export const RecentProjects = (props: any) => {
       </div>
       <SlideDown className="my-dropdown-slidedown">
         {props.menuState.menuRecentProjects &&
-        props.toggleState.menuRecentProjects && <></>}
+          props.toggleState.menuRecentProjects && (
+            <div className="repository-list">
+              <ul className="codicon">
+                {pageList.map((page: any) => {
+                  return (
+                    <li
+                      key={page.title}
+                      id={page.title}
+                      onClick={() => props.onAddTabsHandler(page.title)}
+                      className={`py-0.5 cursor-pointer flex items-center`}
+                    >
+                      <div
+                        className={`${page.icon} flex items-center px-5`}
+                        title={page.title}
+                      >
+                        {page.title}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
       </SlideDown>
     </div>
   );

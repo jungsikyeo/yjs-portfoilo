@@ -2,7 +2,6 @@ import React from "react";
 import { SlideDown } from "react-slidedown";
 
 export const GithubRepos = (props: any) => {
-
   return (
     <div
       className={`${
@@ -27,19 +26,20 @@ export const GithubRepos = (props: any) => {
       </div>
       <SlideDown className="my-dropdown-slidedown">
         {props.menuState.menuGithub && props.toggleState.menuGithub && (
-          <div className="repository-list pl-5">
+          <div className="repository-list">
             <ul className="codicon">
               {props.repos.map((repo: any) => (
                 <li
                   key={repo["name"]}
                   id={repo["name"]}
-                  className={`py-0.5 cursor-pointer flex items-center
-                      ${
-                        false ? `codicon-chevron-down` : `codicon-chevron-right`
-                      }
-                      `}
+                  className={`py-0.5 cursor-pointer flex items-center`}
                 >
-                  <div className="folder flex items-center" title={repo["name"]}>{repo["name"]}</div>
+                  <div
+                    className="codicon-link flex items-center px-5"
+                    title={repo["name"]}
+                  >
+                    {repo["name"]}
+                  </div>
                 </li>
               ))}
             </ul>

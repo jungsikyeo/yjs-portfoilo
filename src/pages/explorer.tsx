@@ -27,26 +27,33 @@ export const Explorer = (props: any) => {
           onMenuHandler={props.onMenuHandler}
           menuState={props.menuState}
           toggleState={props.toggleState}
+          allContents={props.allContents}
+          onAddTabsHandler={props.onAddTabsHandler}
         />
         <RecentProjects
           onMenuHandler={props.onMenuHandler}
           menuState={props.menuState}
           toggleState={props.toggleState}
+          allContents={props.allContents}
+          onAddTabsHandler={props.onAddTabsHandler}
         />
         <TechSkills
           onMenuHandler={props.onMenuHandler}
           menuState={props.menuState}
           toggleState={props.toggleState}
+          onAddTabsHandler={props.onAddTabsHandler}
         />
         <Timeline
           onMenuHandler={props.onMenuHandler}
           menuState={props.menuState}
           toggleState={props.toggleState}
+          onAddTabsHandler={props.onAddTabsHandler}
         />
         <LicenseList
           onMenuHandler={props.onMenuHandler}
           menuState={props.menuState}
           toggleState={props.toggleState}
+          onAddTabsHandler={props.onAddTabsHandler}
         />
         <GithubRepos
           onMenuHandler={props.onMenuHandler}
