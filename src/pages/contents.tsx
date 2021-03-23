@@ -145,16 +145,11 @@ export const Contents = (props: any) => {
         style={{ height: "calc(100% - 65px)" }}
       >
         <div
-          className="content h-full"
-          style={{
-            width: viewMode === 0 ? "100%" : "50%",
-            display: viewMode === 2 ? "none" : "block",
-          }}
+          className={`content h-full absolute ${viewMode === 0 ? `w-full`: `w-1/2`} ${viewMode === 2 ? `hidden`: `block`}`}
           ref={leftContent}
         >
           <div className="w-full">
             <div style={{ width: "calc(100% - 60px)" }}>
-              {``}
               <ReactScrollWheelHandler
                 upHandler={() => onScroll("left")}
                 downHandler={() => onScroll("left")}
@@ -171,16 +166,16 @@ export const Contents = (props: any) => {
                         {index === 0 && (
                           <div
                             style={{
-                              width: "120px",
-                              height: "200px",
+                              width: "60px",
+                              height: "100px",
                               position: "absolute",
                               top: "65px",
                               right: `calc(${
                                 viewMode === 1 ? `50%` : `0%`
-                              } - 50px)`,
+                              } + 10px)`,
                             }}
                           >
-                            <Minimap of={minimap} width={120} height={200} />
+                            <Minimap of={minimap} width={60} height={100} />
                           </div>
                         )}
                         <div className="flex">

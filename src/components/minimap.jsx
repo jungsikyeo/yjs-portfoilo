@@ -93,8 +93,8 @@ Minimap.propTypes = {
 };
 
 Minimap.defaultProps = {
-  width: 120,
-  height: 200,
+  width: 60,
+  height: 100,
 };
 
 export default Minimap;

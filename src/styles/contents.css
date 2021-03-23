@@ -39,7 +39,7 @@
 }
 
 .minimapWindow {
-  width: 120px;
+  width: 60px;
   height: 200px;
   overflow: auto;
   overflow: hidden;
@@ -47,12 +47,12 @@
 }
 
 .minimapWindow__preview {
-  width: 50vw;
+  width: 100vw;
   position: absolute;
   left: 0;
   top: 0;
   z-index: 100;
   transform-origin: left top;
-  max-height: 200vh;
+  max-height: 400vh;
   overflow: hidden;
 }
