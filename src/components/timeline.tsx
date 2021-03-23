@@ -1,7 +1,12 @@
 import React from "react";
 import { SlideDown } from "react-slidedown";
+import { Page } from "./page";
+import { initTab } from "../App";
 
 export const Timeline = (props: any) => {
+  const pageList = props.allContents?.filter(
+    (item: any) => item.name === "TIMELINE"
+  );
   return (
     <div
       className={`${
@@ -23,12 +28,16 @@ export const Timeline = (props: any) => {
         >
           TIMELINE
         </span>
-        <SlideDown className="my-dropdown-slidedown">
-          {props.menuState.menuTimeline && props.toggleState.menuTimeline && (
-            <></>
-          )}
-        </SlideDown>
       </div>
+      <SlideDown className="my-dropdown-slidedown">
+        {props.menuState.menuTimeline && props.toggleState.menuTimeline && (
+          <Page
+            pageList={pageList.length > 0 ? pageList : [initTab]}
+            currentTab={props.currentTab}
+            onAddTabsHandler={props.onAddTabsHandler}
+          />
+        )}
+      </SlideDown>
     </div>
   );
 };

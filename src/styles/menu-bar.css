@@ -4,7 +4,7 @@
   left: 0;
   width: 48px;
   background-color: var(--menuBarBackground);
-  z-index: 100;
+  z-index: 200;
 }
 
 .menu-bar ul li {
@@ -48,7 +48,7 @@
   color: var(--menuBarLayerFontColor);
   background-color: var(--menuBarSettingLayerBackground);
   border: 1px solid rgba(0, 0, 0, 0.5);
-  z-index: 100;
+  z-index: 200;
 }
 .setting-layer:focus {
   outline: none;

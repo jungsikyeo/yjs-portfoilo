@@ -29,6 +29,7 @@ export const Explorer = (props: any) => {
           toggleState={props.toggleState}
           allContents={props.allContents}
           onAddTabsHandler={props.onAddTabsHandler}
+          currentTab={props.currentTab}
         />
         <RecentProjects
           onMenuHandler={props.onMenuHandler}
@@ -36,24 +37,31 @@ export const Explorer = (props: any) => {
           toggleState={props.toggleState}
           allContents={props.allContents}
           onAddTabsHandler={props.onAddTabsHandler}
+          currentTab={props.currentTab}
         />
         <TechSkills
           onMenuHandler={props.onMenuHandler}
           menuState={props.menuState}
           toggleState={props.toggleState}
+          allContents={props.allContents}
           onAddTabsHandler={props.onAddTabsHandler}
+          currentTab={props.currentTab}
         />
         <Timeline
           onMenuHandler={props.onMenuHandler}
           menuState={props.menuState}
           toggleState={props.toggleState}
+          allContents={props.allContents}
           onAddTabsHandler={props.onAddTabsHandler}
+          currentTab={props.currentTab}
         />
         <LicenseList
           onMenuHandler={props.onMenuHandler}
           menuState={props.menuState}
           toggleState={props.toggleState}
+          allContents={props.allContents}
           onAddTabsHandler={props.onAddTabsHandler}
+          currentTab={props.currentTab}
         />
         <GithubRepos
           onMenuHandler={props.onMenuHandler}

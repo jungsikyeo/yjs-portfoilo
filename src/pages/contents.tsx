@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Tabs, { Tab } from "../components/tabs";
 import "../styles/theme.css";
 import "../styles/contents.css";
@@ -14,8 +14,6 @@ export const Contents = (props: any) => {
     localViewMode = "2";
     localStorage.setItem("viewMode", "2");
   }
-  const [activeTab, handleTabSwitch] = useState(0);
-  const [currentTab, setCurrentTab] = useState(props?.allTabs[0]);
   const [viewMode, setViewMode] = useState(+localViewMode);
   const leftContent = useRef<HTMLDivElement>(null);
   const rightContent = useRef<HTMLDivElement>(null);
@@ -37,37 +35,6 @@ export const Contents = (props: any) => {
       return;
     }
     targetPanel.scrollTop = thisPanel.scrollTop;
-  };
-  useEffect(() => {
-    if (props.allTabs && props.allTabs.length > 0) {
-      setCurrentTab(props.allTabs[activeTab]);
-    }
-  }, [activeTab, props.allTabs]);
-
-  const handleTabPositionChange = (a: number, b: number) => {
-    let newTabs = [...props.allTabs];
-    let c = newTabs[a];
-    newTabs[a] = newTabs[b];
-    newTabs[b] = c;
-
-    if (activeTab === a) {
-      handleTabSwitch(b);
-    } else if (activeTab === b) {
-      handleTabSwitch(a);
-    }
-    props.setAllTabs(newTabs);
-  };
-  const handleTabClose = (index: number) => {
-    if (props.allTabs.length === 1) {
-      return;
-    }
-    let newTabs = [...props.allTabs];
-    newTabs.splice(index, 1);
-
-    if (activeTab >= newTabs.length) {
-      handleTabSwitch(newTabs.length - 1);
-    }
-    props.setAllTabs(newTabs);
   };
 
   const parseMd = (md: string) => {
@@ -129,7 +96,7 @@ export const Contents = (props: any) => {
     return md;
   };
 
-  const minimap = currentTab?.content
+  const minimap = props.currentTab?.content
     .split("\n")
     .map((lineContent: string, index: number) => {
       return <div dangerouslySetInnerHTML={{ __html: parseMd(lineContent) }} />;
@@ -141,10 +108,10 @@ export const Contents = (props: any) => {
       ref={props.contentRef}
     >
       <Tabs
-        active={activeTab}
-        onTabSwitch={handleTabSwitch}
-        onTabPositionChange={handleTabPositionChange}
-        onTabClose={handleTabClose}
+        active={props.activeTab}
+        onTabSwitch={props.handleTabSwitch}
+        onTabPositionChange={props.handleTabPositionChange}
+        onTabClose={props.handleTabClose}
         draggable={true}
       >
         {props.allTabs?.map((tab: any) => (
@@ -154,7 +121,7 @@ export const Contents = (props: any) => {
         ))}
       </Tabs>
       <div className="content-nav flex items-center justify-between">
-        <div className="nav-title">{`${currentTab?.name} > ${currentTab?.title}`}</div>
+        <div className="nav-title">{`${props.currentTab?.name} > ${props.currentTab?.title}`}</div>
         <div className="nav-view codicon">
           <span
             onClick={() => onViewMode(0)}
@@ -196,7 +163,7 @@ export const Contents = (props: any) => {
                   outline: "none",
                 }}
               >
-                {currentTab?.content
+                {props.currentTab?.content
                   .split("\n")
                   .map((lineContent: string, index: number) => {
                     return (
@@ -251,9 +218,9 @@ export const Contents = (props: any) => {
               outline: "none",
             }}
           >
-            <article className="prose">
+            <article className="prose" style={{ maxWidth: "100%" }}>
               <ReactMarkdown allowDangerousHtml>
-                {currentTab?.content}
+                {props.currentTab?.content}
               </ReactMarkdown>
             </article>
           </ReactScrollWheelHandler>

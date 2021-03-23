@@ -103,7 +103,8 @@
   height: 22px;
   font-size: 13px;
 }
-.repository-list ul li:hover {
+.repository-list ul li:hover,
+.repository-list ul li.page-select {
   background-color: var(--explorerComponentlistSelectBackgroundColor);
 }
 .repository-list .codicon-chevron-right:before,

@@ -1,7 +1,12 @@
 import React from "react";
 import { SlideDown } from "react-slidedown";
+import { Page } from "./page";
+import { initTab } from "../App";
 
 export const TechSkills = (props: any) => {
+  const pageList = props.allContents?.filter(
+    (item: any) => item.name === "TECH SKILLS"
+  );
   return (
     <div
       className={`${
@@ -24,11 +29,16 @@ export const TechSkills = (props: any) => {
         >
           TECH SKILLS
         </span>
-        <SlideDown className="my-dropdown-slidedown">
-          {props.menuState.menuTechSkills &&
-            props.toggleState.menuTechSkills && <></>}
-        </SlideDown>
       </div>
+      <SlideDown className="my-dropdown-slidedown">
+        {props.menuState.menuTechSkills && props.toggleState.menuTechSkills && (
+          <Page
+            pageList={pageList.length > 0 ? pageList : [initTab]}
+            currentTab={props.currentTab}
+            onAddTabsHandler={props.onAddTabsHandler}
+          />
+        )}
+      </SlideDown>
     </div>
   );
 };

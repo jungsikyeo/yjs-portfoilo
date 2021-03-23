@@ -1,8 +1,10 @@
 import React from "react";
 import { SlideDown } from "react-slidedown";
+import { Page } from "./page";
+import { initTab } from "../App";
 
 export const AboutMe = (props: any) => {
-  const pageList = props.allContents.filter(
+  const pageList = props.allContents?.filter(
     (item: any) => item.name === "ABOUT ME"
   );
   return (
@@ -29,27 +31,11 @@ export const AboutMe = (props: any) => {
       </div>
       <SlideDown className="my-dropdown-slidedown">
         {props.menuState.menuAboutMe && props.toggleState.menuAboutMe && (
-          <div className="repository-list">
-            <ul className="codicon">
-              {pageList.map((page: any) => {
-                return (
-                  <li
-                    key={page.title}
-                    id={page.title}
-                    onClick={() => props.onAddTabsHandler(page.title)}
-                    className={`py-0.5 cursor-pointer flex items-center`}
-                  >
-                    <div
-                      className={`${page.icon} flex items-center px-5`}
-                      title={page.title}
-                    >
-                      {page.title}
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+          <Page
+            pageList={pageList.length > 0 ? pageList : [initTab]}
+            currentTab={props.currentTab}
+            onAddTabsHandler={props.onAddTabsHandler}
+          />
         )}
       </SlideDown>
     </div>

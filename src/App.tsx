@@ -17,6 +17,13 @@ interface IFTab {
   showClose: boolean;
   content: string;
 }
+export const initTab = {
+  name: "",
+  icon: "",
+  title: "",
+  showClose: false,
+  content: "",
+};
 
 function App() {
   let theme = localStorage.getItem("theme");
@@ -36,15 +43,40 @@ function App() {
     }, 1500);
   };
 
-  const [allTabs, setAllTabs] = useState<[IFTab]>([
-    {
-      name: "",
-      icon: "",
-      title: "",
-      showClose: false,
-      content: "",
-    },
-  ]);
+  const [allTabs, setAllTabs] = useState<[IFTab]>([initTab]);
+  const [activeTab, handleTabSwitch] = useState(0);
+  const [currentTab, setCurrentTab] = useState(allTabs[0]);
+  useEffect(() => {
+    if (allTabs && allTabs.length > 0) {
+      setCurrentTab(allTabs[activeTab]);
+    }
+  }, [activeTab, allTabs]);
+
+  const handleTabPositionChange = (a: number, b: number) => {
+    let newTabs: [IFTab] = [...allTabs];
+    let c = newTabs[a];
+    newTabs[a] = newTabs[b];
+    newTabs[b] = c;
+
+    if (activeTab === a) {
+      handleTabSwitch(b);
+    } else if (activeTab === b) {
+      handleTabSwitch(a);
+    }
+    setAllTabs(newTabs);
+  };
+  const handleTabClose = (index: number) => {
+    if (allTabs.length === 1) {
+      return;
+    }
+    let newTabs: [IFTab] = [...allTabs];
+    newTabs.splice(index, 1);
+
+    if (activeTab >= newTabs.length) {
+      handleTabSwitch(newTabs.length - 1);
+    }
+    setAllTabs(newTabs);
+  };
   const [allContents, setAllContents] = useState<[IFTab]>(allTabs);
   useEffect(() => {
     const url = "http://strapi.yjsnas.synology.me/portfolios";
@@ -62,11 +94,26 @@ function App() {
             firstContentTab.showClose = item.showClose;
             firstContentTab.content = item.content;
             setAllTabs([firstContentTab]);
+            setCurrentTab(firstContentTab);
           }
         });
         setAllContents(data);
       });
   }, []);
+  const onAddTabsHandler = async (title: string) => {
+    const newAllTabs: [IFTab] = allTabs;
+    let findIndex = newAllTabs.findIndex((item: IFTab) => item.title === title);
+    if (findIndex < 0) {
+      const newTab: IFTab = allContents.filter(
+        (item: IFTab) => item.title === title
+      )[0];
+      await newAllTabs.push(newTab);
+      await setAllTabs(newAllTabs);
+      findIndex = await (newAllTabs.length - 1);
+    }
+    await setCurrentTab(newAllTabs[findIndex]);
+    await handleTabSwitch(findIndex);
+  };
 
   const [repos, setRepos] = useState([]);
   useEffect(() => {
@@ -216,15 +263,7 @@ function App() {
       explorerPanel.style.transition = "all .5s ease";
     }
   };
-  const onAddTabsHandler = (title: string) => {
-    const newAllTabs: [IFTab] = allTabs;
-    const newTab: IFTab = allContents.filter(
-      (item: IFTab) => item.title === title
-    )[0];
-    newAllTabs.push(newTab);
-    console.log(newAllTabs);
-    setAllTabs(newAllTabs);
-  };
+
   return (
     <div
       className="w-full h-screen select-none"
@@ -267,12 +306,19 @@ function App() {
               explorerViewState={explorerViewState}
               allContents={allContents}
               onAddTabsHandler={onAddTabsHandler}
+              currentTab={currentTab}
               repos={repos}
               explorerRef={explorerRef}
             />
             <Contents
               allTabs={allTabs}
               setAllTabs={setAllTabs}
+              currentTab={currentTab}
+              setCurrentTab={setCurrentTab}
+              activeTab={activeTab}
+              handleTabSwitch={handleTabSwitch}
+              handleTabPositionChange={handleTabPositionChange}
+              handleTabClose={handleTabClose}
               contentRef={contentRef}
             />
             <Terminal
