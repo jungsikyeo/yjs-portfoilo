@@ -145,7 +145,7 @@ export const Contents = (props: any) => {
         style={{ height: "calc(100% - 65px)" }}
       >
         <div
-          className={`content h-full absolute ${viewMode === 0 ? `w-full`: `w-1/2`} ${viewMode === 2 ? `hidden`: `block`}`}
+          className={`content h-full ${viewMode === 0 ? `w-full`: `w-1/2`} ${viewMode === 2 ? `hidden`: `block`}`}
           ref={leftContent}
         >
           <div className="w-full">
@@ -198,11 +198,7 @@ export const Contents = (props: any) => {
           </div>
         </div>
         <div
-          className="content-preview h-full"
-          style={{
-            width: viewMode === 2 ? "100%" : "50%",
-            display: viewMode === 0 ? "none" : "block",
-          }}
+          className={`content-preview h-full ${viewMode === 2 ? `w-full`: `w-1/2`} ${viewMode === 0 ? `hidden`: `block`}`}
           ref={rightContent}
         >
           <ReactScrollWheelHandler
