@@ -18,9 +18,29 @@ export const Contents = (props: any) => {
   const leftContent = useRef<HTMLDivElement>(null);
   const rightContent = useRef<HTMLDivElement>(null);
 
-  const onViewMode = (mode: number) => {
+  const onViewMode = async (mode: number) => {
     localStorage.setItem("viewMode", mode + "");
-    setViewMode(mode);
+
+    const leftPanel = leftContent.current;
+    const rightPanel = rightContent.current;
+
+    if (!leftPanel || !rightPanel) {
+      return;
+    }
+
+    if (mode === 0) {
+      leftPanel.style.zIndex = "20";
+      rightPanel.style.zIndex = "10";
+    } else if (mode === 2) {
+      leftPanel.style.zIndex = "10";
+      rightPanel.style.zIndex = "20";
+    } else {
+      leftPanel.style.zIndex = "10";
+      rightPanel.style.zIndex = "10";
+    }
+    setTimeout(() => {
+      setViewMode(mode);
+    }, 500);
   };
 
   const onScroll = (panel: string) => {
@@ -145,7 +165,9 @@ export const Contents = (props: any) => {
         style={{ height: "calc(100% - 65px)" }}
       >
         <div
-          className={`content h-full ${viewMode === 0 ? `w-full`: `w-1/2`} ${viewMode === 2 ? `hidden`: `block`}`}
+          className={`content h-full absolute left-0 ${
+            viewMode === 0 ? `w-full z-20` : `w-1/2 z-10 border-r`
+          }`}
           ref={leftContent}
         >
           <div className="w-full">
@@ -169,10 +191,8 @@ export const Contents = (props: any) => {
                               width: "60px",
                               height: "100px",
                               position: "absolute",
-                              top: "65px",
-                              right: `calc(${
-                                viewMode === 1 ? `50%` : `0%`
-                              } + 10px)`,
+                              top: "0",
+                              right: "10px",
                             }}
                           >
                             <Minimap of={minimap} width={60} height={100} />
@@ -198,7 +218,9 @@ export const Contents = (props: any) => {
           </div>
         </div>
         <div
-          className={`content-preview h-full ${viewMode === 2 ? `w-full`: `w-1/2`} ${viewMode === 0 ? `hidden`: `block`}`}
+          className={`content-preview absolute right-0 h-full ${
+            viewMode === 2 ? `w-full z-20` : `w-1/2 z-10 border-l`
+          }`}
           ref={rightContent}
         >
           <ReactScrollWheelHandler
