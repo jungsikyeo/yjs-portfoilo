@@ -78,7 +78,7 @@ function App() {
   };
   const [allContents, setAllContents] = useState<[IFTab]>(allTabs);
   useEffect(() => {
-    const url = "http://strapi.yjsnas.synology.me/portfolios";
+    const url = "http://152.67.198.254:1337/portfolios";
     fetch(url, {
       method: "GET",
     })

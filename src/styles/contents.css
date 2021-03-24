@@ -28,11 +28,8 @@
   background-color: var(--contentsBackground);
   overflow-y: scroll;
   border-top: 1px solid;
-  transition:all .5s ease-in-out;
+  transition:all 1.0s ease-in-out;
   border-color: var(--contentsTabTopBorderColor);
-}
-.contents-container .content-preview {
-  padding: 15px;
 }
 .contents-container .content .line-number {
   width: 40px;

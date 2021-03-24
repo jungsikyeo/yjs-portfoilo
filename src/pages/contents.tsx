@@ -162,7 +162,7 @@ export const Contents = (props: any) => {
       </div>
       <div className="content-wrapper">
         <div
-          className={`content h-full absolute left-0 ${
+          className={`content h-full absolute py-3 left-0 ${
             viewMode === 0
               ? `w-full z-20`
               : viewMode === 2
@@ -221,10 +221,10 @@ export const Contents = (props: any) => {
         <div
           className={`content-preview absolute right-0 h-full ${
             viewMode === 2
-              ? `w-full z-20`
+              ? `w-full z-20 px-20 py-10`
               : viewMode === 0
               ? `w-0 z-10 border-l`
-              : `w-1/2 z-10 border-l`
+              : `w-1/2 z-10 border-l p-10`
           }`}
           ref={rightContent}
         >
