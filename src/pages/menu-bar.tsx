@@ -41,13 +41,14 @@ export const MenuBar = (props: any) => {
               props.menuState.menuGithub ? `select` : ``
             }`}
           />
-          <li
+          <a href="mailto:saeminam@gmail.com,mdotcom12@naver.com">
+            <li
               id="menuEmail"
-              onClick={props.onMenuHandler}
               className={`codicon-mail flex items-center justify-center ${
-                  props.menuState.menuEmail ? `select` : ``
+                props.menuState.menuEmail ? `select` : ``
               }`}
-          />
+            />
+          </a>
         </ul>
         <ul className="w-full h-2/6 flex flex-col items-center justify-end codicon">
           <li
