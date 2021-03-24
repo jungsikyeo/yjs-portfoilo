@@ -365,7 +365,7 @@ ul {
  */
 
 html {
-  font-family: sans-serif; /* 1 */
+  font-family: Do Hyeon, sans-serif; /* 1 */
   line-height: 1.5; /* 2 */
 }
 
@@ -634,10 +634,6 @@ video {
   display: inline;
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-.prose article {
-  max-width: 100%;
 }
 
 .prose-sm {
@@ -7231,11 +7227,11 @@ video {
 }
 
 .font-sans {
-  font-family: sans-serif;
+  font-family: Do Hyeon, sans-serif;
 }
 
 .font-serif {
-  font-family: serif;
+  font-family: Do Hyeon, serif;
 }
 
 .font-thin {
@@ -23695,10 +23691,6 @@ video {
     margin-bottom: 10px;
   }
 
-  .sm\:prose article {
-    max-width: 100%;
-  }
-
   .sm\:prose-sm {
   }
 
@@ -30290,11 +30282,11 @@ video {
   }
 
   .sm\:font-sans {
-    font-family: sans-serif;
+    font-family: Do Hyeon, sans-serif;
   }
 
   .sm\:font-serif {
-    font-family: serif;
+    font-family: Do Hyeon, serif;
   }
 
   .sm\:font-thin {
@@ -46668,10 +46660,6 @@ video {
     margin-bottom: 10px;
   }
 
-  .md\:prose article {
-    max-width: 100%;
-  }
-
   .md\:prose-sm {
   }
 
@@ -53263,11 +53251,11 @@ video {
   }
 
   .md\:font-sans {
-    font-family: sans-serif;
+    font-family: Do Hyeon, sans-serif;
   }
 
   .md\:font-serif {
-    font-family: serif;
+    font-family: Do Hyeon, serif;
   }
 
   .md\:font-thin {
@@ -69641,10 +69629,6 @@ video {
     margin-bottom: 10px;
   }
 
-  .lg\:prose article {
-    max-width: 100%;
-  }
-
   .lg\:prose-sm {
   }
 
@@ -76236,11 +76220,11 @@ video {
   }
 
   .lg\:font-sans {
-    font-family: sans-serif;
+    font-family: Do Hyeon, sans-serif;
   }
 
   .lg\:font-serif {
-    font-family: serif;
+    font-family: Do Hyeon, serif;
   }
 
   .lg\:font-thin {
@@ -92614,10 +92598,6 @@ video {
     margin-bottom: 10px;
   }
 
-  .xl\:prose article {
-    max-width: 100%;
-  }
-
   .xl\:prose-sm {
   }
 
@@ -99209,11 +99189,11 @@ video {
   }
 
   .xl\:font-sans {
-    font-family: sans-serif;
+    font-family: Do Hyeon, sans-serif;
   }
 
   .xl\:font-serif {
-    font-family: serif;
+    font-family: Do Hyeon, serif;
   }
 
   .xl\:font-thin {
@@ -115587,10 +115567,6 @@ video {
     margin-bottom: 10px;
   }
 
-  .\32xl\:prose article {
-    max-width: 100%;
-  }
-
   .\32xl\:prose-sm {
   }
 
@@ -122182,11 +122158,11 @@ video {
   }
 
   .\32xl\:font-sans {
-    font-family: sans-serif;
+    font-family: Do Hyeon, sans-serif;
   }
 
   .\32xl\:font-serif {
-    font-family: serif;
+    font-family: Do Hyeon, serif;
   }
 
   .\32xl\:font-thin {

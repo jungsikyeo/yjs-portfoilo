@@ -160,13 +160,14 @@ export const Contents = (props: any) => {
           />
         </div>
       </div>
-      <div
-        className="flex content-wrapper"
-        style={{ height: "calc(100% - 65px)" }}
-      >
+      <div className="content-wrapper">
         <div
           className={`content h-full absolute left-0 ${
-            viewMode === 0 ? `w-full z-20` : `w-1/2 z-10 border-r`
+            viewMode === 0
+              ? `w-full z-20`
+              : viewMode === 2
+              ? `w-0 z-10`
+              : `w-1/2 z-10 border-r`
           }`}
           ref={leftContent}
         >
@@ -219,7 +220,11 @@ export const Contents = (props: any) => {
         </div>
         <div
           className={`content-preview absolute right-0 h-full ${
-            viewMode === 2 ? `w-full z-20` : `w-1/2 z-10 border-l`
+            viewMode === 2
+              ? `w-full z-20`
+              : viewMode === 0
+              ? `w-0 z-10 border-l`
+              : `w-1/2 z-10 border-l`
           }`}
           ref={rightContent}
         >

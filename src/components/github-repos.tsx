@@ -2,6 +2,9 @@ import React from "react";
 import { SlideDown } from "react-slidedown";
 
 export const GithubRepos = (props: any) => {
+  const onOpenWindowRepo = (repoUrl: string) => {
+    window.open(repoUrl, "_new");
+  };
   return (
     <div
       className={`${
@@ -14,14 +17,14 @@ export const GithubRepos = (props: any) => {
         className="component cursor-pointer codicon flex items-center"
       >
         <span
-          className={`text-xs font-black pl-2 flex items-center 
+          className={`text-base font-black pl-2 flex items-center 
                 ${
                   props.menuState.menuGithub && props.toggleState.menuGithub
                     ? `codicon-chevron-down`
                     : `codicon-chevron-right`
                 }`}
         >
-          REPOSITORY
+          GITHUB
         </span>
       </div>
       <SlideDown className="my-dropdown-slidedown">
@@ -32,6 +35,7 @@ export const GithubRepos = (props: any) => {
                 <li
                   key={repo["name"]}
                   id={repo["name"]}
+                  onClick={() => onOpenWindowRepo(repo["svn_url"])}
                   className={`py-0.5 cursor-pointer flex items-center`}
                 >
                   <div

@@ -6,9 +6,8 @@ import "./styles/theme.css";
 import "react-slidedown/lib/slidedown.css";
 import { MenuBar } from "./pages/menu-bar";
 import { Explorer } from "./pages/explorer";
-import { Footer } from "./pages/footer";
 import { Contents } from "./pages/contents";
-import { Terminal } from "./pages/terminal";
+import {Helmet} from "react-helmet-async";
 
 interface IFTab {
   name: string;
@@ -135,9 +134,9 @@ function App() {
     menuTechSkills: false,
     menuTimeline: false,
     menuLicense: false,
-    menuExtensions: false,
     menuGithub: false,
     menuAboutMe: true,
+    menuEmail: false,
     menuSettings: false,
   };
   const [menuState, setMenuState] = useState(menuList);
@@ -169,7 +168,8 @@ function App() {
     if (!contentPanel || !terminalPanel) {
       return;
     }
-    const { y: terminalY } = terminalPanel.getBoundingClientRect();
+    const { y: terminalY, bottom } = terminalPanel.getBoundingClientRect();
+    console.log(terminalY, bottom, window.outerHeight);
     const top = terminalY + movementY;
 
     if (top < 200) {
@@ -266,71 +266,49 @@ function App() {
 
   return (
     <div
-      className="w-full h-screen select-none"
+      className="w-full h-screen select-none text-base "
       style={{
-        fontSize: "13px",
         lineHeight: "1.4em",
         zIndex: 1,
         minWidth: "500px",
         minHeight: "522px",
       }}
     >
-      <div
-        className="w-full"
-        style={{
-          top: "0px",
-          height: "calc(100% - 22px)",
-        }}
-      >
-        <div
-          className="w-full absolute whitespace-normal"
-          style={{
-            top: "0px",
-            height: "calc(100% - 22px)",
-          }}
-        >
-          <div
-            className="w-full h-full relative whitespace-nowrap"
-            style={{ minHeight: "500px" }}
-          >
-            <MenuBar
-              onThemeHandler={onThemeHandler}
-              onMenuHandler={onMenuHandler}
-              menuState={menuState}
-              toggleState={toggleState}
-            />
-            <Explorer
-              onMenuHandler={onMenuHandler}
-              menuState={menuState}
-              toggleState={toggleState}
-              explorerViewState={explorerViewState}
-              allContents={allContents}
-              onAddTabsHandler={onAddTabsHandler}
-              currentTab={currentTab}
-              repos={repos}
-              explorerRef={explorerRef}
-            />
-            <Contents
-              allTabs={allTabs}
-              setAllTabs={setAllTabs}
-              currentTab={currentTab}
-              setCurrentTab={setCurrentTab}
-              activeTab={activeTab}
-              handleTabSwitch={handleTabSwitch}
-              handleTabPositionChange={handleTabPositionChange}
-              handleTabClose={handleTabClose}
-              contentRef={contentRef}
-            />
-            <Terminal
-              allTabs={allTabs}
-              setAllTabs={setAllTabs}
-              terminalRef={terminalRef}
-              handleDrag={handleDrag}
-            />
-          </div>
-        </div>
+      <Helmet>
+        <title>JungsikYeo Portfolio</title>
+        <meta charSet="utf-8" />
+        <meta name="description" content="JungsikYeo Portfolio" />
+      </Helmet>
+      <div className="w-full h-full flex whitespace-nowrap">
+        <MenuBar
+          onThemeHandler={onThemeHandler}
+          onMenuHandler={onMenuHandler}
+          menuState={menuState}
+          toggleState={toggleState}
+        />
+        <Explorer
+          onMenuHandler={onMenuHandler}
+          menuState={menuState}
+          toggleState={toggleState}
+          explorerViewState={explorerViewState}
+          allContents={allContents}
+          onAddTabsHandler={onAddTabsHandler}
+          currentTab={currentTab}
+          repos={repos}
+          explorerRef={explorerRef}
+        />
+        <Contents
+          allTabs={allTabs}
+          setAllTabs={setAllTabs}
+          currentTab={currentTab}
+          setCurrentTab={setCurrentTab}
+          activeTab={activeTab}
+          handleTabSwitch={handleTabSwitch}
+          handleTabPositionChange={handleTabPositionChange}
+          handleTabClose={handleTabClose}
+          contentRef={contentRef}
+        />
       </div>
-      <Footer />
     </div>
   );
 }

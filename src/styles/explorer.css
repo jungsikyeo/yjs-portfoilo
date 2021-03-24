@@ -13,6 +13,7 @@
 .explorer {
   left: 48px;
   width: 200px;
+  height: 100%;
   background-color: var(--explorerBackground);
   z-index: 10;
   overflow-y: auto;
@@ -40,7 +41,7 @@
   border-bottom: 1px solid var(--explorerComponentBorderColor);
 }
 .component-list .component {
-  height: 22px;
+  height: 30px;
 }
 
 .component span {
@@ -65,7 +66,7 @@
 .repository-list .html:before,
 .repository-list .json:before {
   width: 22px;
-  height: 22px;
+  height: 30px;
   content: " ";
   background-size: 16px;
   background-position: 0;
@@ -77,7 +78,7 @@
 }
 .repository-list .codicon-link:before {
   width: 22px;
-  height: 22px;
+  height: 30px;
   content: "\eb15";
   background-size: 16px;
   background-position: 0;
@@ -100,7 +101,7 @@
 }
 .repository-list ul li {
   color: var(--explorerComponentlistFontColor);
-  height: 22px;
+  height: 30px;
   font-size: 13px;
 }
 .repository-list ul li:hover,

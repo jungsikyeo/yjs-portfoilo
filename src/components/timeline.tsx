@@ -19,7 +19,7 @@ export const Timeline = (props: any) => {
         className="component cursor-pointer codicon flex items-center"
       >
         <span
-          className={`text-xs font-black pl-2 flex items-center 
+          className={`text-base font-black pl-2 flex items-center 
                 ${
                   props.menuState.menuTimeline && props.toggleState.menuTimeline
                     ? `codicon-chevron-down`

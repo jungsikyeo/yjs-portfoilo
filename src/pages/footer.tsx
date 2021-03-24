@@ -5,10 +5,10 @@ export const Footer = () => {
   return (
     <div
       style={{
-        top: "calc(100% - 22px)",
+        bottom: "0",
         height: "22px",
         background: "var(--footerBackground)",
-        zIndex: 200,
+        zIndex: 500,
       }}
     >
       <span className="absolute">footer</span>

@@ -30,15 +30,8 @@ export const MenuBar = (props: any) => {
           <li
             id="menuLicense"
             onClick={props.onMenuHandler}
-            className={`codicon-debug-alt flex items-center justify-center ${
-              props.menuState.menuLicense ? `select` : ``
-            }`}
-          />
-          <li
-            id="menuExtensions"
-            onClick={props.onMenuHandler}
             className={`codicon-extensions flex items-center justify-center ${
-              props.menuState.menuExtensions ? `select` : ``
+              props.menuState.menuLicense ? `select` : ``
             }`}
           />
           <li
@@ -47,6 +40,13 @@ export const MenuBar = (props: any) => {
             className={`codicon-github flex items-center justify-center ${
               props.menuState.menuGithub ? `select` : ``
             }`}
+          />
+          <li
+              id="menuEmail"
+              onClick={props.onMenuHandler}
+              className={`codicon-mail flex items-center justify-center ${
+                  props.menuState.menuEmail ? `select` : ``
+              }`}
           />
         </ul>
         <ul className="w-full h-2/6 flex flex-col items-center justify-end codicon">

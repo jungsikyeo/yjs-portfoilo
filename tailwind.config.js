@@ -52,8 +52,8 @@ module.exports = {
       pink: colors.fuchsia,
     },
     fontFamily: {
-      sans: ["sans-serif"],
-      serif: ["serif"],
+      sans: ["Do Hyeon", "sans-serif"],
+      serif: ["Do Hyeon", "serif"],
     },
     extend: {},
   },

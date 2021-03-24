@@ -7,6 +7,7 @@ html.theme-transition *:after {
 }
 
 html {
+  height: 100%;
   --primaryBackground: rgb(40, 42, 54);
   --primaryTextColor: rgb(255, 255, 255);
 
@@ -50,6 +51,7 @@ html {
 }
 
 html[data-theme="dark"] {
+  height: 100%;
   --primaryBackground: rgb(40, 42, 54);
   --primaryTextColor: rgb(255, 255, 255);
 
@@ -93,6 +95,7 @@ html[data-theme="dark"] {
 }
 
 body {
+  height: 100%;
   background: var(--primaryBackground);
   color: var(--primaryTextColor);
   font-size: 11px;
