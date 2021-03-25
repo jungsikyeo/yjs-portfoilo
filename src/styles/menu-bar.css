@@ -40,7 +40,7 @@
 
 .setting-layer {
   left: 24px;
-  bottom: 45px;
+  bottom: 80px;
   width: 270px;
   height: 80px;
   font-size: 13px;
@@ -62,7 +62,6 @@
 .setting-layer li {
   height: 30px;
   margin: 3px 0 3px 0;
-  padding: 0 10px 0 10px;
   display: flex;
   align-items: center;
 }

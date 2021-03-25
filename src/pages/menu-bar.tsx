@@ -28,6 +28,13 @@ export const MenuBar = (props: any) => {
             }`}
           />
           <li
+              id="menuEducation"
+              onClick={props.onMenuHandler}
+              className={`codicon-debug-alt flex items-center justify-center ${
+                  props.menuState.menuEducation ? `select` : ``
+              }`}
+          />
+          <li
             id="menuLicense"
             onClick={props.onMenuHandler}
             className={`codicon-extensions flex items-center justify-center ${
@@ -41,14 +48,6 @@ export const MenuBar = (props: any) => {
               props.menuState.menuGithub ? `select` : ``
             }`}
           />
-          <a href="mailto:saeminam@gmail.com,mdotcom12@naver.com">
-            <li
-              id="menuEmail"
-              className={`codicon-mail flex items-center justify-center ${
-                props.menuState.menuEmail ? `select` : ``
-              }`}
-            />
-          </a>
         </ul>
         <ul className="w-full h-2/6 flex flex-col items-center justify-end codicon">
           <li
@@ -82,6 +81,14 @@ export const MenuBar = (props: any) => {
               </ul>
             </div>
           </li>
+          <a href="mailto:saeminam@gmail.com,mdotcom12@naver.com">
+            <li
+                id="menuEmail"
+                className={`codicon-mail flex items-center justify-center ${
+                    props.menuState.menuEmail ? `select` : ``
+                }`}
+            />
+          </a>
         </ul>
       </div>
     </div>

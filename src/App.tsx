@@ -15,6 +15,18 @@ interface IFTab {
   title: string;
   showClose: boolean;
   content: string;
+  projects: [
+    title: string,
+    description:string,
+    screenshot: [
+      {
+        name: string,
+        width: number,
+        height: number,
+        url: string,
+      },
+    ]
+  ] | null
 }
 export const initTab = {
   name: "",
@@ -22,6 +34,7 @@ export const initTab = {
   title: "",
   showClose: false,
   content: "",
+  projects: null
 };
 
 function App() {
@@ -92,6 +105,7 @@ function App() {
             firstContentTab.icon = item.icon;
             firstContentTab.showClose = item.showClose;
             firstContentTab.content = item.content;
+            firstContentTab.projects = item.projects
             setAllTabs([firstContentTab]);
             setCurrentTab(firstContentTab);
           }
@@ -133,6 +147,7 @@ function App() {
     menuRecentProjects: false,
     menuTechSkills: false,
     menuTimeline: false,
+    menuEducation: false,
     menuLicense: false,
     menuGithub: false,
     menuAboutMe: true,
