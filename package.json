@@ -67,6 +67,5 @@
     "prop-types": "^15.7.2",
     "sass": "^1.32.8",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
-  },
-  "proxy": "http://152.67.198.254:1337"
+  }
 }
