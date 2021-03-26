@@ -94,6 +94,7 @@ function App() {
     const url = "http://152.67.198.254:1337/portfolios";
     fetch(url, {
       method: "GET",
+      headers: {"Access-Control-Allow-Origin": "*"}
     })
       .then((res) => res.json())
       .then((data) => {
