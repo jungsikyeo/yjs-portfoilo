@@ -43,6 +43,9 @@ html {
   --contentsContentMarkdownLinkFontColor: rgb(139, 233, 253);
   --contentsContentMarkdownBlockquoteFontColor: rgb(241, 250, 140);
   --contentsContentMarkdownPreFontColor: rgb(80, 250, 123);
+  --contentsContentJsonKeyFontColor: rgb(139, 233, 253);
+  --contentsContentJsonValueFontColor: rgb(241, 250, 140);
+  --contentsContentJsonColonFontColor: rgb(255, 121, 198);
 
   --terminalBackground: rgb(40, 42, 54);
   --terminalTopBorderColor: rgb(189, 147, 249);
@@ -87,6 +90,9 @@ html[data-theme="dark"] {
   --contentsContentMarkdownLinkFontColor: rgb(212, 212, 212);
   --contentsContentMarkdownBlockquoteFontColor: rgb(106, 153, 85);
   --contentsContentMarkdownPreFontColor: rgb(212, 212, 212);
+  --contentsContentJsonKeyFontColor: rgb(156, 220, 254);
+  --contentsContentJsonValueFontColor: rgb(206, 145, 120);
+  --contentsContentJsonColonFontColor: rgb(240, 240, 240);
 
   --terminalBackground: rgb(31, 31, 31);
   --terminalTopBorderColor: rgb(65, 65, 65);
