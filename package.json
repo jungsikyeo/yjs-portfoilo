@@ -16,6 +16,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-helmet": "^6.1.0",
+    "cors": "^2.8.5",
     "framer-motion": "^4.0.3",
     "lethargy": "^1.0.9",
     "lodash": "^4.17.21",
@@ -66,5 +67,6 @@
     "prop-types": "^15.7.2",
     "sass": "^1.32.8",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
-  }
+  },
+  "proxy": "http://152.67.198.254:1337"
 }
