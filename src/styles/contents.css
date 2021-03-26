@@ -59,3 +59,12 @@
   max-height: 400vh;
   overflow: hidden;
 }
+
+
+.zoom-in  {
+  width: 100%;
+  transition: 0.5s all ease-in-out;
+  transform: scale(1.5);
+  z-index: 9999;
+}
+

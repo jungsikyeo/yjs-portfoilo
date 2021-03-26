@@ -15,7 +15,7 @@ export const HtmlViewer = (props: any) => {
           {props.currentTab?.projects?.length > 0 &&
             props.currentTab?.projects[0]?.screenshot?.length > 0 &&
             props.currentTab?.projects[0]?.screenshot.map((img: any) => (
-              <div className="w-full flex justify-center  mb-10">
+              <div className="w-full flex justify-center mb-10">
                 <img
                   src={`http://152.67.198.254:1337${img.url}`}
                   alt={`${img.name}`}
