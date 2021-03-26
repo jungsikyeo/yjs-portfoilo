@@ -28,7 +28,7 @@
   background-color: var(--contentsBackground);
   overflow-y: scroll;
   border-top: 1px solid;
-  transition:all 1.0s ease-in-out;
+  transition: all 1s ease-in-out;
   border-color: var(--contentsTabTopBorderColor);
 }
 .contents-container .content .line-number {
@@ -49,7 +49,6 @@
   overflow: hidden;
   z-index: 100;
 }
-
 .minimapWindow__preview {
   width: 100vw;
   position: absolute;

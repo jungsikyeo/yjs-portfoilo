@@ -1,5 +1,4 @@
 import React from "react";
-import ReactMarkdown from "react-markdown";
 
 export const HtmlViewer = (props: any) => {
   return (
@@ -13,6 +12,18 @@ export const HtmlViewer = (props: any) => {
                 props.currentTab?.projects[0].description,
             }}
           />
+          {props.currentTab?.projects?.length > 0 &&
+            props.currentTab?.projects[0]?.screenshot?.length > 0 &&
+            props.currentTab?.projects[0]?.screenshot.map((img: any) => (
+              <div className="w-full flex justify-center  mb-10">
+                <img
+                  src={`http://152.67.198.254:1337${img.url}`}
+                  alt={`${img.name}`}
+                  width="640"
+                  className="rounded-xl"
+                />
+              </div>
+            ))}
         </article>
       </div>
     </div>
