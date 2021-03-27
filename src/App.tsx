@@ -91,7 +91,7 @@ function App() {
   };
   const [allContents, setAllContents] = useState<[IFTab]>(allTabs);
   useEffect(() => {
-    const url = "http://strapi.yjsworld.tk:1337/portfolios";
+    const url = "https://strapi.yjsnas.synology.me/portfolios";
     fetch(url, {
       method: "GET",
     })

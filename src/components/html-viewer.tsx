@@ -17,9 +17,9 @@ export const HtmlViewer = (props: any) => {
             props.currentTab?.projects[0]?.screenshot.map((img: any) => (
               <div className="w-full flex justify-center mb-10">
                 <img
-                  src={`http://152.67.198.254:1337${img.url}`}
+                  src={`https://strapi.yjsnas.synology.me${img.url}`}
                   alt={`${img.name}`}
-                  width="640"
+                  width="850"
                   className="rounded-xl"
                 />
               </div>
