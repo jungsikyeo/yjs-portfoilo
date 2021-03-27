@@ -12,8 +12,8 @@ import {JsonViewer} from "../components/json-viewer";
 export const Contents = (props: any) => {
   let localViewMode = localStorage.getItem("viewMode");
   if (!localViewMode) {
-    localViewMode = "2";
-    localStorage.setItem("viewMode", "2");
+    localViewMode = "1";
+    localStorage.setItem("viewMode", "1");
   }
   const [viewMode, setViewMode] = useState(+localViewMode);
   const leftContent = useRef<HTMLDivElement>(null);
