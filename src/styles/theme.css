@@ -100,6 +100,53 @@ html[data-theme="dark"] {
   --footerBackground: rgb(1, 121, 203);
 }
 
+html[data-theme="light"] {
+  height: 100%;
+  --primaryBackground: rgb(255, 255, 255);
+  --primaryTextColor: rgb(0, 0, 0);
+
+  --appScrollBackground: rgb(193, 193, 193);
+
+  --menuBarBackground: rgb(43, 43, 43);
+  --menuBarPrimaryFontColor: rgb(128, 128, 128);
+  --menuBarSecondFontColor: rgb(204, 204, 204);
+  --menuBarSelectBorderColor: rgb(204, 204, 204);
+  --menuBarSelectBackgroundColor: rgb(43, 43, 43);
+  --menuBarSettingLayerBackground: rgb(98, 99, 100);
+  --menuBarSettingLayerListBorderColor: rgb(138, 138, 138);
+  --menuBarSettingLayerSelectFontColor: rgb(255, 250, 252);
+  --menuBarSettingLayerSelectBackgroundcolor: rgb(230, 110, 155);
+  --menuBarLayerFontColor: rgb(224, 224, 225);
+
+  --explorerBackground: rgb(243, 243, 243);
+  --explorerComponentBorderColor: rgb(215, 215, 215);
+  --explorerComponentBackground: rgb(243, 243, 243);
+  --explorerComponentlistFontColor: rgb(0, 0, 0);
+  --explorerComponentlistSelectBackgroundColor: rgb(0, 95, 199);
+  --explorerComponentTitleFontColor: rgb(111, 111, 111);
+  --explorerRepositoryTitleFontColor: rgb(97, 97, 97);
+  --explorerRepositoryTitleBorderColor: rgb(0, 144, 249);
+
+  --contentsBackground: rgb(255, 255, 255);
+  --contentsTabBackground: rgb(243, 243, 243);
+  --contentsTabTopBorderColor: rgb(255, 255, 255);
+  --contentsContentLineNumberFontColor: rgb(0, 121, 150);
+  --contentsContentMarkdownHFontColor: rgb(140, 0, 0);
+  --contentsContentMarkdownPFontColor: rgb(0, 0, 0);
+  --contentsContentMarkdownImgFontColor: rgb(178, 0, 2);
+  --contentsContentMarkdownLinkFontColor: rgb(0, 0, 0);
+  --contentsContentMarkdownBlockquoteFontColor: rgb(106, 153, 85);
+  --contentsContentMarkdownPreFontColor: rgb(212, 212, 212);
+  --contentsContentJsonKeyFontColor: rgb(156, 220, 254);
+  --contentsContentJsonValueFontColor: rgb(206, 145, 120);
+  --contentsContentJsonColonFontColor: rgb(240, 240, 240);
+
+  --terminalBackground: rgb(31, 31, 31);
+  --terminalTopBorderColor: rgb(65, 65, 65);
+
+  --footerBackground: rgb(1, 121, 203);
+}
+
 body {
   height: 100%;
   background: var(--primaryBackground);

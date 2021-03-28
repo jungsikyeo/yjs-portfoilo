@@ -78,6 +78,10 @@ export const MenuBar = (props: any) => {
                 <li id="dark" onClick={props.onThemeHandler}>
                   <span>Color Theme : Dark (Visual Studio)</span>
                 </li>
+                <li className="list-border self-center" />
+                <li id="light" onClick={props.onThemeHandler}>
+                  <span>Color Theme : Light (Visual Studio)</span>
+                </li>
               </ul>
             </div>
           </li>
