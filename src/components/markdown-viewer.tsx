@@ -147,7 +147,7 @@ export const MarkdownViewer = (props: any) => {
             outline: "none",
           }}
         >
-          <article className="prose" style={{ maxWidth: "100%" }}>
+          <article className="prose max-w-full">
             <ReactMarkdown allowDangerousHtml>
               {props.currentTab?.content}
             </ReactMarkdown>

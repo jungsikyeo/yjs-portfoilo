@@ -2,6 +2,13 @@ import React from "react";
 import { isMobile } from "react-device-detect";
 
 export const HtmlViewer = (props: any) => {
+    const themeName = document.getElementsByTagName("HTML").item(0)?.getAttribute("data-theme");
+    if(props.currentTab?.title === "Timeline.html" && themeName === "light") {
+        const pList:any = document.getElementsByTagName("article").item(0)?.getElementsByTagName("p");
+        for(let i = 0; i < pList.length; i++) {
+            pList[i].style.color = "white";
+        }
+    }
   return (
     <div className="content-wrapper">
       <div
@@ -9,7 +16,7 @@ export const HtmlViewer = (props: any) => {
           isMobile ? `p-5` : `px-20 py-10`
         }`}
       >
-        <article className="prose" style={{ maxWidth: "100%" }}>
+        <article className="prose max-w-full">
           <div
             dangerouslySetInnerHTML={{
               __html:
