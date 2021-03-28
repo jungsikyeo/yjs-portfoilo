@@ -2,6 +2,7 @@ import React from "react";
 import ReactScrollWheelHandler from "./ReactScrollWheelHandler";
 import Minimap from "./minimap";
 import ReactMarkdown from "react-markdown";
+import {isMobile} from "react-device-detect";
 
 const parseMd = (md: string) => {
   //blockquote
@@ -131,10 +132,10 @@ export const MarkdownViewer = (props: any) => {
       <div
         className={`content-preview absolute right-0 h-full ${
           props.viewMode === 2
-            ? `w-full z-20 px-20 py-10`
+            ? `w-full z-20 ${isMobile ? `p-5` : `px-20 py-10`}`
             : props.viewMode === 0
             ? `w-0 z-10 border-l`
-            : `w-1/2 z-10 border-l p-10`
+            : `w-1/2 z-10 border-l ${isMobile ? `p-5` : `p-10`}`
         }`}
         ref={props.rightContent}
       >

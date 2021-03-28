@@ -46,6 +46,7 @@ html {
   --contentsContentJsonKeyFontColor: rgb(139, 233, 253);
   --contentsContentJsonValueFontColor: rgb(241, 250, 140);
   --contentsContentJsonColonFontColor: rgb(255, 121, 198);
+  --contentsContentJsonFunctionFontColor: rgb(248, 248, 242);
 
   --terminalBackground: rgb(40, 42, 54);
   --terminalTopBorderColor: rgb(189, 147, 249);
@@ -93,6 +94,7 @@ html[data-theme="dark"] {
   --contentsContentJsonKeyFontColor: rgb(156, 220, 254);
   --contentsContentJsonValueFontColor: rgb(206, 145, 120);
   --contentsContentJsonColonFontColor: rgb(240, 240, 240);
+  --contentsContentJsonFunctionFontColor: rgb(248, 248, 242);
 
   --terminalBackground: rgb(31, 31, 31);
   --terminalTopBorderColor: rgb(65, 65, 65);
@@ -137,9 +139,10 @@ html[data-theme="light"] {
   --contentsContentMarkdownLinkFontColor: rgb(0, 0, 0);
   --contentsContentMarkdownBlockquoteFontColor: rgb(106, 153, 85);
   --contentsContentMarkdownPreFontColor: rgb(212, 212, 212);
-  --contentsContentJsonKeyFontColor: rgb(156, 220, 254);
-  --contentsContentJsonValueFontColor: rgb(206, 145, 120);
-  --contentsContentJsonColonFontColor: rgb(240, 240, 240);
+  --contentsContentJsonKeyFontColor: rgb(0, 104, 183);
+  --contentsContentJsonValueFontColor: rgb(197, 59, 65);
+  --contentsContentJsonColonFontColor: rgb(0, 0, 0);
+  --contentsContentJsonFunctionFontColor: rgb(0, 0, 0);
 
   --terminalBackground: rgb(31, 31, 31);
   --terminalTopBorderColor: rgb(65, 65, 65);

@@ -1,9 +1,14 @@
 import React from "react";
+import { isMobile } from "react-device-detect";
 
 export const HtmlViewer = (props: any) => {
   return (
     <div className="content-wrapper">
-      <div className="content-preview w-full z-20 px-20 py-10">
+      <div
+        className={`content-preview w-full z-20 ${
+          isMobile ? `p-5` : `px-20 py-10`
+        }`}
+      >
         <article className="prose" style={{ maxWidth: "100%" }}>
           <div
             dangerouslySetInnerHTML={{

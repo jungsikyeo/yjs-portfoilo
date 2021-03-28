@@ -173,7 +173,7 @@ function App() {
     }
     await setMenuState(newMenuState);
     await setToggleSate(newToggleState);
-    await onExplorerMenuHandler();
+    if(!newMenuState.menuSettings) await onExplorerMenuHandler();
   };
 
   const explorerRef = useRef<HTMLDivElement>(null);
