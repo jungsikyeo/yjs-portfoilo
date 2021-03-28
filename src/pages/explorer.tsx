@@ -11,7 +11,6 @@ import { Education } from "../components/education";
 import { isMobile } from "react-device-detect";
 
 export const Explorer = (props: any) => {
-  console.log(isMobile);
   return (
     <div
       className="explorer h-full absolute whitespace-normal"
