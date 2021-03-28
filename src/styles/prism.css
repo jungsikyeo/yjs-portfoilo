@@ -8,9 +8,8 @@ https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clik
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #f8f8f2;
+	color: var(--contentsContentJsonFunctionFontColor);
 	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 	font-size: 1em;
 	text-align: left;
 	white-space: pre;
