@@ -201,20 +201,6 @@ function App() {
   };
 
   const [explorerCloseState, setExplorerCloseState] = useState(isMobile);
-  useEffect(() => {
-    const explorerPanel = explorerRef.current;
-    if (!explorerPanel) {
-      return;
-    }
-    if (+(explorerPanel.style.left.replaceAll("px", "")) < 0) {
-      setExplorerCloseState(true);
-    } else {
-      explorerPanel.style.transform = "";
-      explorerPanel.style.transition = "";
-      setExplorerCloseState(false);
-    }
-  }, []);
-
   const onExplorerMenuHandler = () => {
     const explorerPanel = explorerRef.current;
     if (!explorerPanel) {
