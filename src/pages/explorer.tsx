@@ -7,17 +7,18 @@ import { TechSkills } from "../components/tech-skills";
 import { Timeline } from "../components/timeline";
 import { LicenseList } from "../components/license-list";
 import { AboutMe } from "../components/about-me";
-import {Education} from "../components/education";
+import { Education } from "../components/education";
+import { isMobile } from "react-device-detect";
 
 export const Explorer = (props: any) => {
-  const onCloseExplorerHandler = () => {
-    props.explorerRef.current.style.transform = "translateX(-348px)";
-    props.explorerRef.current.style.transition = "all .5s ease";
-  };
+  console.log(isMobile);
   return (
     <div
       className="explorer h-full absolute whitespace-normal"
       ref={props.explorerRef}
+      style={{
+        left: props.explorerCloseState ? "-200px" : "48px",
+      }}
     >
       <div className="w-full h-full component-list text-xs">
         <div className="component-title pl-5 flex items-center justify-between codicon">
@@ -25,13 +26,13 @@ export const Explorer = (props: any) => {
             EXPLORER
           </span>
           <span
-            onClick={onCloseExplorerHandler}
-            className={`${
-              props.explorerViewState
-                ? `hidden`
-                : `block pr-5 cursor-pointer codicon-panel-close text-xs`
-            }`}
-          ></span>
+            onClick={props.onCloseExplorerHandler}
+            className={
+              !isMobile
+                ? "hidden"
+                : "block pr-5 cursor-pointer codicon-panel-close text-xs"
+            }
+          />
         </div>
         <AboutMe
           onMenuHandler={props.onMenuHandler}

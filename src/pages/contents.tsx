@@ -7,7 +7,7 @@ import "../styles/contents.css";
 import "../styles/timeline.scss";
 import "../styles/react-tabs.scss";
 import { HtmlViewer } from "../components/html-viewer";
-import {JsonViewer} from "../components/json-viewer";
+import { JsonViewer } from "../components/json-viewer";
 
 export const Contents = (props: any) => {
   let localViewMode = localStorage.getItem("viewMode");
@@ -62,6 +62,12 @@ export const Contents = (props: any) => {
     <div
       className="contents-container absolute whitespace-normal"
       ref={props.contentRef}
+      style={{
+        left: props.explorerCloseState ? "48px" : "248px",
+        width: props.explorerCloseState
+          ? "calc(100% - 48px)"
+          : "calc(100% - 248px)",
+      }}
     >
       <Tabs
         active={props.activeTab}

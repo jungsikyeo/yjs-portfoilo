@@ -7,7 +7,8 @@ import "react-slidedown/lib/slidedown.css";
 import { MenuBar } from "./pages/menu-bar";
 import { Explorer } from "./pages/explorer";
 import { Contents } from "./pages/contents";
-import {Helmet} from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
+import { isMobile } from "react-device-detect";
 
 interface IFTab {
   name: string;
@@ -18,14 +19,7 @@ interface IFTab {
   projects: [
     title: string,
     description:string,
-    screenshot: [
-      {
-        name: string,
-        width: number,
-        height: number,
-        url: string,
-      },
-    ]
+    screenshot: []
   ] | null
 }
 export const initTab = {
@@ -126,6 +120,14 @@ function App() {
     }
     await setCurrentTab(newAllTabs[findIndex]);
     await handleTabSwitch(findIndex);
+    await onCloseExplorerHandler();
+  };
+  const onCloseExplorerHandler = () => {
+    if(!explorerRef.current || !isMobile) {
+      return;
+    }
+    explorerRef.current.style.transform = "translateX(-348px)";
+    explorerRef.current.style.transition = "all .5s ease";
   };
 
   const [repos, setRepos] = useState([]);
@@ -198,97 +200,34 @@ function App() {
     }
   };
 
-  const useWindowSize = () => {
-    const [windowSize, setWindowSize] = useState<{
-      width: number;
-      height: number;
-    }>({
-      width: 0,
-      height: 0,
-    });
-
-    useEffect(() => {
-      const handleResize = () => {
-        setWindowSize({
-          width: window.innerWidth,
-          height: window.innerHeight,
-        });
-      };
-      window.addEventListener("resize", handleResize);
-      handleResize();
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    const explorerPanel = explorerRef.current;
-    const contentPanel = contentRef.current;
-    const terminalPanel = terminalRef.current;
-    if (!explorerPanel || !contentPanel || !terminalPanel) {
-      return;
-    }
-
-    if (window.innerHeight <= 300) {
-      terminalPanel.style.display = "none";
-      contentPanel.style.height = `100%`;
-    } else {
-      terminalPanel.style.display = "block";
-      terminalPanel.style.height = "30%";
-      terminalPanel.style.top = "70%";
-      contentPanel.style.height = "70%";
-    }
-
-    if (contentPanel.clientWidth <= 700) {
-      explorerPanel.style.left = "-200px";
-      terminalPanel.style.width = "calc(100% - 48px)";
-      terminalPanel.style.left = "48px";
-      contentPanel.style.width = "calc(100% - 48px)";
-      contentPanel.style.left = "48px";
-    } else {
-      explorerPanel.style.left = "48px";
-      terminalPanel.style.width = "";
-      terminalPanel.style.left = "";
-      contentPanel.style.width = "";
-      contentPanel.style.left = "";
-    }
-
-    return windowSize;
-  };
-
-  const size = useWindowSize();
-  const [explorerViewState, setExplorerViewState] = useState(true);
+  const [explorerCloseState, setExplorerCloseState] = useState(isMobile);
   useEffect(() => {
     const explorerPanel = explorerRef.current;
     if (!explorerPanel) {
       return;
     }
-    if (+explorerPanel.style.left.replaceAll("px", "") < 0) {
-      setExplorerViewState(false);
+    if (+(explorerPanel.style.left.replaceAll("px", "")) < 0) {
+      setExplorerCloseState(true);
     } else {
       explorerPanel.style.transform = "";
       explorerPanel.style.transition = "";
-      setExplorerViewState(true);
+      setExplorerCloseState(false);
     }
-  }, [size]);
+  }, []);
+
   const onExplorerMenuHandler = () => {
     const explorerPanel = explorerRef.current;
     if (!explorerPanel) {
       return;
     }
-    if (!explorerViewState) {
+    if (explorerCloseState) {
       explorerPanel.style.transform = "translateX(248px)";
       explorerPanel.style.transition = "all .5s ease";
     }
   };
 
   return (
-    <div
-      className="w-full h-screen select-none text-base "
-      style={{
-        lineHeight: "1.4em",
-        zIndex: 1,
-        minWidth: "500px",
-        minHeight: "522px",
-      }}
-    >
+    <div className="w-full h-screen select-none text-base z-10">
       <Helmet>
         <title>JungsikYeo Portfolio</title>
         <meta charSet="utf-8" />
@@ -305,12 +244,13 @@ function App() {
           onMenuHandler={onMenuHandler}
           menuState={menuState}
           toggleState={toggleState}
-          explorerViewState={explorerViewState}
+          explorerCloseState={explorerCloseState}
           allContents={allContents}
           onAddTabsHandler={onAddTabsHandler}
           currentTab={currentTab}
           repos={repos}
           explorerRef={explorerRef}
+          onCloseExplorerHandler={onCloseExplorerHandler}
         />
         <Contents
           allTabs={allTabs}
@@ -322,6 +262,7 @@ function App() {
           handleTabPositionChange={handleTabPositionChange}
           handleTabClose={handleTabClose}
           contentRef={contentRef}
+          explorerCloseState={explorerCloseState}
         />
       </div>
     </div>
