@@ -1,0 +1,63 @@
+.landing {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #282a37;
+  display: flex;
+  justify-content: center;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: 1s opacity;
+}
+
+pre {
+  width: 100%;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 700;
+  color: #EFEFE9;
+}
+
+.red {
+  color: red;
+}
+.orange {
+  color: orange;
+}
+.yellow {
+  color: yellow;
+}
+.green {
+  color: lawngreen;
+}
+.blue {
+  color: deepskyblue;
+}
+.deeppink {
+  color: deeppink;
+}
+.purple {
+  color: mediumpurple;
+}
+
+.done {
+  color: lawngreen;
+}
+
+.highlight {
+  font-size: 15px;
+  color: #3BFFEA;
+}

@@ -4,10 +4,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import Landing from "./pages/landing";
 
 ReactDOM.render(
   <React.StrictMode>
     <HelmetProvider>
+      <Landing />
       <App />
     </HelmetProvider>
   </React.StrictMode>,

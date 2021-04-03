@@ -217,7 +217,7 @@ function App() {
   };
 
   return (
-    <div className="w-full h-screen select-none text-base z-10">
+    <div id="app" className="w-full h-screen select-none text-base z-10 opacity-0">
       <Helmet>
         <title>JungsikYeo Portfolio</title>
         <meta charSet="utf-8" />
