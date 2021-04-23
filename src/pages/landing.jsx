@@ -56,9 +56,9 @@ export default class Landing extends Component {
             </Typist>
           </div>
           <div id="btnSkip" className="fixed w-full bottom-5 text-xl" style={{zIndex: 1000}}>
-              <div className="flex justify-center items-center">
-                <button onClick={onSkip}>Skip</button>
-              </div>
+            <div className="flex justify-center items-center">
+              <button onClick={onSkip} className="outline-none">Skip</button>
+            </div>
           </div>
         </>
     );
