@@ -6,13 +6,7 @@ export default class Landing extends Component {
   render() {
     const onTypingDone = () => {
       setTimeout(() => {
-        document.getElementById("landing").classList.add("fade-out");
-        document.getElementById("app").style.opacity = "1";
-        document.getElementById("app").style.transition = "2s opacity";
-
-        document.getElementById("btnSkip").classList.add("fade-out");
-        document.getElementById("btnSkip").style.opacity = "0";
-        document.getElementById("btnSkip").style.transition = ".5s opacity";
+        onSkip();
       }, 700)
     }
     const onSkip = () => {
@@ -20,9 +14,11 @@ export default class Landing extends Component {
       document.getElementById("app").style.opacity = "1";
       document.getElementById("app").style.transition = "2s opacity";
 
-      document.getElementById("btnSkip").classList.add("fade-out");
-      document.getElementById("btnSkip").style.opacity = "0";
-      document.getElementById("btnSkip").style.transition = ".5s opacity";
+      document.getElementById("divSkip").classList.add("fade-out");
+      document.getElementById("divSkip").style.opacity = "0";
+      document.getElementById("divSkip").style.transition = ".5s opacity";
+
+      document.getElementById("btnSkip").style.display = "none";
     }
     return (
         <>
@@ -55,9 +51,9 @@ export default class Landing extends Component {
               </pre>
             </Typist>
           </div>
-          <div id="btnSkip" className="w-full" style={{bottom: "100px", position: "absolute", fontSize: "1.25rem", lineHeight: "1.75rem", zIndex: 1000}}>
+          <div id="divSkip" className="w-full" style={{bottom: "100px", position: "absolute", fontSize: "1.25rem", lineHeight: "1.75rem", zIndex: 1000}}>
             <div className="flex justify-center items-center">
-              <button onClick={onSkip} className="outline-none">Skip</button>
+              <button id="btnSkip" onClick={onSkip} className="outline-none">Skip</button>
             </div>
           </div>
         </>
