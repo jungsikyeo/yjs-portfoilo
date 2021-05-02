@@ -55,7 +55,7 @@ export default class Landing extends Component {
               </pre>
             </Typist>
           </div>
-          <div id="btnSkip" className="fixed w-full bottom-5 text-xl" style={{zIndex: 1000}}>
+          <div id="btnSkip" className="w-full text-xl" style={{bottom: "100px", position: "absolute", zIndex: 1000}}>
             <div className="flex justify-center items-center">
               <button onClick={onSkip} className="outline-none">Skip</button>
             </div>
