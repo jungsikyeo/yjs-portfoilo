@@ -16,11 +16,7 @@ interface IFTab {
   title: string;
   showClose: boolean;
   content: string;
-  projects: [
-    title: string,
-    description:string,
-    screenshot: []
-  ] | null
+  projects: [title: string, description: string, screenshot: []] | null;
 }
 export const initTab = {
   name: "",
@@ -28,7 +24,7 @@ export const initTab = {
   title: "",
   showClose: false,
   content: "",
-  projects: null
+  projects: null,
 };
 
 function App() {
@@ -85,7 +81,7 @@ function App() {
   };
   const [allContents, setAllContents] = useState<[IFTab]>(allTabs);
   useEffect(() => {
-    const url = "https://strapi.yjsnas.synology.me/portfolios";
+    const url = "https://strapi.yjsnas.synology.me/portfolios?_sort=id:desc";
     fetch(url, {
       method: "GET",
     })
@@ -99,7 +95,7 @@ function App() {
             firstContentTab.icon = item.icon;
             firstContentTab.showClose = item.showClose;
             firstContentTab.content = item.content;
-            firstContentTab.projects = item.projects
+            firstContentTab.projects = item.projects;
             setAllTabs([firstContentTab]);
             setCurrentTab(firstContentTab);
           }
@@ -123,7 +119,7 @@ function App() {
     await onCloseExplorerHandler();
   };
   const onCloseExplorerHandler = () => {
-    if(!explorerRef.current || !isMobile) {
+    if (!explorerRef.current || !isMobile) {
       return;
     }
     explorerRef.current.style.transform = "translateX(-348px)";
@@ -173,7 +169,7 @@ function App() {
     }
     await setMenuState(newMenuState);
     await setToggleSate(newToggleState);
-    if(newMenuState.menuSettings) {
+    if (newMenuState.menuSettings) {
       await onCloseExplorerHandler();
     } else {
       await onExplorerMenuHandler();
@@ -217,7 +213,10 @@ function App() {
   };
 
   return (
-    <div id="app" className="w-full h-screen select-none text-base z-10 opacity-0">
+    <div
+      id="app"
+      className="w-full h-screen select-none text-base z-10 opacity-0"
+    >
       <Helmet>
         <title>JungsikYeo Portfolio</title>
         <meta charSet="utf-8" />
