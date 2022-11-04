@@ -600,6 +600,9 @@ video {
   color: var(--primaryTextColor);
 }
 
+.prose h4 {
+  color: var(--primaryTextColor);
+}
 .prose h3 code {
   color: #d7ba7d;
 }
