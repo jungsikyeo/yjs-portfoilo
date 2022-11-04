@@ -19,6 +19,9 @@ module.exports = {
               color: "#d7ba7d",
             },
           },
+          h4: {
+            color: "var(--primaryTextColor)",
+          },
           strong: {
             color: "var(--primaryTextColor)",
             fontWeight: "bold",
